@@ -1,0 +1,1448 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>HooPay</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="HooPay" />
+
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="index/assets/img/favicon.png"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Site Main Style sheet css -->
+    <link href="index/assets/css/style.css" rel="stylesheet" />
+    <link href="index/assets/css/responsive.css" rel="stylesheet" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-S1FSY1BS8D"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-S1FSY1BS8D");
+    </script>
+
+    <style>
+      .preloader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 9999999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background: #fff;
+        transition: 0.3s all ease;
+      }
+
+      [data-x-mode="true"] .preloader {
+        display: none;
+      }
+
+      .preloader * {
+        box-sizing: content-box;
+      }
+
+      .preloader.loaded {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .preloader * + .preloader-title {
+        margin-top: 120px;
+      }
+
+      .preloader-title {
+        font-weight: 400;
+        text-transform: none;
+      }
+
+      .preloader-body {
+        text-align: center;
+      }
+
+      .cssload-bell {
+        position: absolute;
+        width: 97px;
+        height: 99px;
+        border-radius: 100%;
+        left: calc(50% - 49px);
+      }
+
+      .cssload-circle {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+
+      .cssload-circle .cssload-inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        border: 5px solid rgba(38, 171, 220, 0.7);
+        border-right: none;
+        border-top: none;
+        background-clip: padding;
+        box-shadow: inset 0 0 10px rgba(38, 171, 220, 0.15);
+      }
+
+      .cssload-circle:nth-of-type(0) {
+        transform: rotate(0deg);
+      }
+
+      .cssload-circle:nth-of-type(0) .cssload-inner {
+        animation: cssload-spin 2.3s infinite linear;
+      }
+
+      .cssload-circle:nth-of-type(1) {
+        transform: rotate(70deg);
+      }
+
+      .cssload-circle:nth-of-type(1) .cssload-inner {
+        animation: cssload-spin 2.3s infinite linear;
+      }
+
+      .cssload-circle:nth-of-type(2) {
+        transform: rotate(140deg);
+      }
+
+      .cssload-circle:nth-of-type(2) .cssload-inner {
+        animation: cssload-spin 2.3s infinite linear;
+      }
+
+      .cssload-bell {
+        animation: cssload-spin 5.75s infinite linear;
+      }
+
+      @keyframes cssload-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="preloader loaded">
+      <div class="preloader-container">
+        <div class="cssload-bell">
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+        </div>
+        <h5 class="preloader-title">
+          <img
+            src="index/assets/img/logo-white.png"
+            style="max-width: 90px; width: 100%"
+          />
+        </h5>
+      </div>
+    </div>
+
+    <!-- Preloader -->
+    <!-- <div class="preloader">
+            <div class="loader">
+                <div class="shadow"></div>
+                <div class="box"></div>
+            </div>
+        </div> -->
+    <!-- End Preloader -->
+
+    <!-- Page Wrapper Start -->
+    <div class="page-wrapper">
+      <!-- Navbar Start -->
+      <nav
+        class="navbar navbar-b navbar-trans navbar-expand-md fixed-top"
+        id="mainNav"
+      >
+        <div class="container">
+          <a class="navbar-brand js-scroll" href="index.html">
+            <img
+              class="navbar-brand-regular"
+              src="index/assets/img/logo-white.png"
+              style="max-width: 100px; width: 100%"
+              alt="brand-logo-white"
+            />
+            <img
+              class="navbar-brand-dark"
+              src="index/assets/img/logo-dark.png"
+              style="max-width: 100px; width: 100%"
+              alt="brand-logo-dark"
+            />
+          </a>
+          <button
+            class="navbar-toggler collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarDefault"
+            aria-controls="navbarDefault"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div
+            class="navbar-collapse collapse justify-content-end"
+            id="navbarDefault"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link js-scroll active" href="#home">Início</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll" href="#price">Taxas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll" href="#faq">Suporte</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll" href="#contact">Contato</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar End -->
+
+      <!-- Home Section Start -->
+      <header
+        id="home"
+        class="home-area hero-equal-height section-padding overflow-hidden d-flex align-items-center"
+      >
+        <div class="container">
+          <div class="row d-flex align-items-center">
+            <div class="col-12 col-md-7 col-lg-6">
+              <div class="text-left home-content z-index position-relative">
+                <h1>
+                  CONTE COM OS RECURSOS QUE IRÃO IMPULSIONAR O SEU NEGÓCIO
+                </h1>
+                <p>
+                  Diversas Ferramentas gratuitas para você operar da maneira
+                  mais Simples possível.
+                </p>
+                <div class="apps-store-btn">
+                  <a href="#" class="apps-store-btn-1">
+                    <img src="index/assets/img/app-store-1.png" alt="" />
+                  </a>
+                  <a href="#">
+                    <img src="index/assets/img/app-store-2.png" alt="" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-5 col-lg-6">
+              <div class="text-center z-index position-relative home-image">
+                <img
+                  src="index/assets/img/hero-mockup.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="svg-shape-bottom">
+          <img
+            src="index/assets/img/home-bottom-shape.png"
+            class="bottom-shape img-fluid"
+            alt=""
+          />
+        </div>
+      </header>
+      <!-- Home Section End -->
+
+      <!-- How it Works Section Start -->
+      <div class="works-area section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 offset-md-2">
+              <div class="section-title">
+                <h6 class="small-title">Como Funciona</h6>
+                <h2>
+                  Improved Design and Performance of<br />
+                  High Level Finance Apps
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex align-items-center">
+            <div class="col-lg-4 col-md-6 col-sm-12 works-item-box">
+              <div class="works-item">
+                <div class="works-icon icon-bg-1">
+                  <i class="ti-credit-card"></i>
+                </div>
+                <div class="works-info">
+                  <h3>Métodos de Pagamento</h3>
+                  <p>
+                    Ofereça ao seu cliente Boleto, Cartão de Crédito e Pix
+                    Parcelado
+                  </p>
+                </div>
+                <span class="work-count">1</span>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 works-item-box">
+              <div class="works-item">
+                <div class="works-icon icon-bg-2"><i class="ti-money"></i></div>
+                <div class="works-info">
+                  <h3>Taxas Acessíveis</h3>
+                  <p>Quanto Maior o seu Faturamento menor é a sua Taxa!</p>
+                </div>
+                <span class="work-count">2</span>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 works-item-box">
+              <div class="works-item">
+                <div class="works-icon icon-bg-3">
+                  <i class="ti-cloud"></i>
+                </div>
+                <div class="works-info">
+                  <h3>Área de Membros</h3>
+                  <p>Insira seu Conteúdo Digital Gratuitamente</p>
+                </div>
+                <span class="work-count">2</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row d-flex align-items-center mt-5">
+            <div class="col-lg-4 col-md-6 col-sm-12 works-item-box">
+              <div class="works-item">
+                <div class="works-icon icon-bg-1">
+                  <i class="ti-face-smile"></i>
+                </div>
+                <div class="works-info">
+                  <h3>Fácil de Customizar</h3>
+                  <p>
+                    Personalize rapidamente o seu Checkout ou sua Loja Virtual
+                  </p>
+                </div>
+                <span class="work-count">2</span>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 works-item-box">
+              <div class="works-item">
+                <div class="works-icon icon-bg-2">
+                  <i class="ti-stats-up"></i>
+                </div>
+                <div class="works-info">
+                  <h3>Conversão Personalizada</h3>
+                  <p>
+                    Uma equipe especializada que melhora a aprovação de suas
+                    vendas
+                  </p>
+                </div>
+                <span class="work-count">3</span>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 works-item-box">
+              <div class="works-item">
+                <div class="works-icon icon-bg-3">
+                  <i class="ti-bolt"></i>
+                </div>
+                <div class="works-info">
+                  <h3>Diversas Integrações</h3>
+                  <p>
+                    Ferramentas Gratuitas para Vendas, N.F., Logística e etc.
+                  </p>
+                </div>
+                <span class="work-count">3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- How it Works Section End -->
+
+      <!-- About Section Start -->
+      <section id="about" class="about-area section-padding">
+        <div class="container">
+          <div class="row d-flex align-items-center">
+            <div class="col-lg-6 col-md-12">
+              <div class="about-img animation-bounce">
+                <img
+                  src="index/assets/img/about.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div class="about-info">
+                <h6 class="small-title">About Our Apps</h6>
+                <h2>Increase your productivity with Finance Apps!</h2>
+                <div class="row d-flex align-items-center">
+                  <div class="col-lg-12 col-md-6 col-sm-12 features-item-box">
+                    <div class="features-item">
+                      <div class="features-icon color-icon-1">
+                        <i class="ti-palette"></i>
+                      </div>
+                      <div class="features-info">
+                        <h3>Clean Design</h3>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-md-6 col-sm-12 features-item-box">
+                    <div class="features-item">
+                      <div class="features-icon color-icon-2">
+                        <i class="ti-layers-alt"></i>
+                      </div>
+                      <div class="features-info">
+                        <h3>Secure Data</h3>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-md-6 col-sm-12 features-item-box">
+                    <div class="features-item">
+                      <div class="features-icon color-icon-3">
+                        <i class="ti-comments"></i>
+                      </div>
+                      <div class="features-info">
+                        <h3>Retina Ready</h3>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About Section End -->
+
+      <!-- Apps Overview Section Start -->
+      <section class="overview-area section-padding">
+        <div class="container">
+          <div class="row d-flex align-items-center">
+            <div class="col-lg-6 col-md-12">
+              <div class="overview-info">
+                <h6 class="small-title">WE ARE THE BEST</h6>
+                <h2>Awesome features best app for your modern lifestyle</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore
+                </p>
+                <div class="row">
+                  <div class="col-lg-12 col-md-6 col-sm-12">
+                    <div class="why-choos-list active">
+                      <i class="fa fa-check-circle"></i>
+                      <span>Increase Your Sales</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-md-6 col-sm-12">
+                    <div class="why-choos-list">
+                      <i class="fa fa-check-circle"></i>
+                      <span>Fast app Downloader</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-md-6 col-sm-12">
+                    <div class="why-choos-list">
+                      <i class="fa fa-check-circle"></i>
+                      <span>100% Responsive Design</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-md-6 col-sm-12">
+                    <div class="why-choos-list">
+                      <i class="fa fa-check-circle"></i>
+                      <span> 24 Support (Everyday)</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="button">Learn More</a>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div class="overview-img text-center">
+                <img
+                  src="index/assets/img/overview.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Apps Overview Section End -->
+
+      <!-- Apps Overview-2 Section Start -->
+      <section class="overview-area-2 section-padding">
+        <div class="container">
+          <div class="row d-flex align-items-center">
+            <div class="col-lg-6 col-md-12">
+              <div class="overview-img-2 text-center">
+                <img
+                  src="index/assets/img/overview-2.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div class="overview-info-2">
+                <h6 class="small-title">Apps Overview</h6>
+                <h2>Share your apps data with friends easily connect</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  commodo consequat.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore
+                </p>
+                <ul>
+                  <li>
+                    <div class="overview-share-icon">
+                      <i class="ti-settings"></i>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="overview-share-icon">
+                      <i class="ti-heart"></i>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="overview-share-icon">
+                      <i class="ti-shield"></i>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="overview-share-icon">
+                      <i class="ti-server"></i>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Apps Overview-2 Section End -->
+
+      <!-- Video & Counter Section Start -->
+      <section class="video-area section-padding">
+        <div class="container">
+          <div class="row d-flex align-items-center">
+            <div class="col-md-10 offset-md-1">
+              <div class="video-content">
+                <a
+                  href="https://www.youtube.com/watch?v=L7Cz9Sx-rbg"
+                  class="iq-video popup-video mfp-iframe video-btn"
+                >
+                  <i class="fa fa-play-circle-o"></i
+                ></a>
+                <h5 class="mt-4 text-white">Watch Video Introduction</h5>
+              </div>
+            </div>
+          </div>
+          <div class="counter-inner-box">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-12 counter-item">
+                <div class="single-counter-box">
+                  <div class="single-counter">
+                    <i class="pe-7s-cloud-download"></i>
+                    <h3 class="odometer" data-count="1700">00</h3>
+                    <p>Complete Project</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 counter-item">
+                <div class="single-counter-box">
+                  <div class="single-counter">
+                    <i class="pe-7s-like"></i>
+                    <h3 class="odometer" data-count="1300">00</h3>
+                    <p>Happy Client</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12 counter-item">
+                <div class="single-counter-box">
+                  <div class="single-counter">
+                    <i class="pe-7s-albums"></i>
+                    <h3 class="odometer" data-count="1200">00</h3>
+                    <p>Award Winner</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Video & Counter Section End -->
+
+      <!-- Screenshort Section Start -->
+      <section id="screenshort" class="screenshort-area section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="section-title">
+                <h6 class="small-title">Latest Short</h6>
+                <h2>Beautiful Interface</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="screenshort-slide-content">
+                <div class="screenshort-slide owl-carousel owl-theme">
+                  <div class="screenshort-item">
+                    <img
+                      src="index/assets/img/short\short-1.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <div class="screenshort-item">
+                    <img
+                      src="index/assets/img/short\short-2.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <div class="screenshort-item">
+                    <img
+                      src="index/assets/img/short\short-3.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <div class="screenshort-item">
+                    <img
+                      src="index/assets/img/short\short-4.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <div class="screenshort-item">
+                    <img
+                      src="index/assets/img/short\short-5.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <div class="screenshort-item">
+                    <img
+                      src="index/assets/img/short\short-6.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <div class="screenshort-item">
+                    <img
+                      src="index/assets/img/short\short-7.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Screenshort Section End -->
+
+      <!-- Pricing Section Start -->
+      <section id="price" class="price-area section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 section-title">
+              <h6 class="small-title">Comfortable Price</h6>
+              <h2>Finance Pricing Plan</h2>
+            </div>
+            <!-- pricing item -->
+            <div class="col-lg-4 col-md-6 col-sm-12 price-item">
+              <div class="single-price-item">
+                <div class="pricing-header">
+                  <h3 class="pricing-title">Basic Plan</h3>
+                </div>
+                <div class="pricing-body">
+                  <div class="price-icon icon-bg-1">
+                    <i class="ti-comments"></i>
+                  </div>
+                  <div class="price-wrapper">
+                    <span class="currency">$</span>
+                    <span class="price">29</span>
+                    <span class="period">/Month</span>
+                  </div>
+                  <ul class="list">
+                    <li class="active">Unlimited Website</li>
+                    <li class="active">Unlimited Users</li>
+                    <li class="active">5 GB Bandwidth</li>
+                    <li class="active">Highest Speed</li>
+                    <li>Data Security and Backupss</li>
+                    <li>1 GB Storage</li>
+                    <li>24x7 Great Support</li>
+                    <li>Monthly Reports and Analytics</li>
+                  </ul>
+                </div>
+                <div class="pricing-footer">
+                  <a href="#" class="button">Select Plan</a>
+                </div>
+              </div>
+            </div>
+            <!-- pricing item end -->
+            <!-- pricing item -->
+            <div class="col-lg-4 col-md-6 col-sm-12 price-item">
+              <div class="single-price-item active">
+                <div class="pricing-header">
+                  <h3 class="pricing-title">Advanced Plan</h3>
+                </div>
+                <div class="pricing-body">
+                  <div class="price-icon icon-bg-2">
+                    <i class="ti-pulse"></i>
+                  </div>
+                  <div class="price-wrapper">
+                    <span class="currency">$</span>
+                    <span class="price">49</span>
+                    <span class="period">/Month</span>
+                  </div>
+                  <ul class="list">
+                    <li class="active">Unlimited Website</li>
+                    <li class="active">Unlimited Users</li>
+                    <li class="active">10 GB Bandwidth</li>
+                    <li class="active">Highest Speed</li>
+                    <li class="active">Data Security and Backupss</li>
+                    <li class="active">5 GB Storage</li>
+                    <li>24x7 Great Support</li>
+                    <li>Monthly Reports and Analytics</li>
+                  </ul>
+                </div>
+                <div class="pricing-footer">
+                  <a href="#" class="button">Select Plan</a>
+                </div>
+              </div>
+            </div>
+            <!-- pricing item end -->
+            <!-- pricing item -->
+            <div class="col-lg-4 col-md-6 col-sm-12 price-item">
+              <div class="single-price-item">
+                <div class="pricing-header">
+                  <h3 class="pricing-title">Expert Plan</h3>
+                </div>
+                <div class="pricing-body">
+                  <div class="price-icon icon-bg-3">
+                    <i class="ti-bolt"></i>
+                  </div>
+                  <div class="price-wrapper">
+                    <span class="currency">$</span>
+                    <span class="price">79</span>
+                    <span class="period">/Month</span>
+                  </div>
+                  <ul class="list">
+                    <li class="active">Unlimited Website</li>
+                    <li class="active">Unlimited Users</li>
+                    <li class="active">15 GB Bandwidth</li>
+                    <li class="active">Highest Speed</li>
+                    <li class="active">Data Security and Backupss</li>
+                    <li class="active">10 GB Storage</li>
+                    <li class="active">24x7 Great Support</li>
+                    <li class="active">Monthly Reports and Analytics</li>
+                  </ul>
+                </div>
+                <div class="pricing-footer">
+                  <a href="#" class="button">Select Plan</a>
+                </div>
+              </div>
+            </div>
+            <!-- pricing item end -->
+          </div>
+        </div>
+      </section>
+      <!-- Pricing Section End -->
+
+      <!-- Testimonials Section Start -->
+      <!-- <section id="review" class="testimonial-area section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="section-title">
+                                <h6 class="small-title">Client Say</h6>
+                                <h2>Reviews Our Apps</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div id="testimonial-slide" class="owl-carousel owl-theme owl-loaded owl-drag">
+                                <div class="single-testimonial">
+                                    <div class="testi-content-inner">
+                                        <div class="testimonial-rating">
+                                            <ul class="rating text-center">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                        </div>
+                                        <div class="testimonial-bio">
+                                            <div class="avatar">
+                                                <img src="index/assets/img/testimonial-1.jpg" alt="testimonial">
+                                            </div>
+                                            <div class="bio-info">
+                                                <h3 class="name">Saabir al-Obeid</h3>
+                                                <span>Business Man</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="single-testimonial">
+                                    <div class="testi-content-inner">
+                                        <div class="testimonial-rating">
+                                            <ul class="rating text-center">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                        </div>
+                                        <div class="testimonial-bio">
+                                            <div class="avatar">
+                                                <img src="index/assets/img/testimonial-2.jpg" alt="testimonial">
+                                            </div>
+                                            <div class="bio-info">
+                                                <h3 class="name">Rose Hopkins</h3>
+                                                <span>Founder of Apple</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="single-testimonial">
+                                    <div class="testi-content-inner">
+                                        <div class="testimonial-rating">
+                                            <ul class="rating text-center">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                        </div>
+                                        <div class="testimonial-bio">
+                                            <div class="avatar">
+                                                <img src="index/assets/img/testimonial-3.jpg" alt="testimonial">
+                                            </div>
+                                            <div class="bio-info">
+                                                <h3 class="name">Ruben Houston</h3>
+                                                <span>Ceo of Google</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="single-testimonial">
+                                    <div class="testi-content-inner">
+                                        <div class="testimonial-rating">
+                                            <ul class="rating text-center">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                        </div>
+                                        <div class="testimonial-bio">
+                                            <div class="avatar">
+                                                <img src="index/assets/img/testimonial-4.jpg" alt="testimonial">
+                                            </div>
+                                            <div class="bio-info">
+                                                <h3 class="name">Monica Frazier</h3>
+                                                <span>Coo of Facebook</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+      <!-- Testimonials Section End -->
+
+      <!-- Faq Section Start -->
+      <section id="faq" class="faq-area section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 section-title">
+              <h6 class="small-title">Talvez sua dúvida esteja abaixo</h6>
+              <h2>Perguntas e Respostas Frequentes</h2>
+            </div>
+            <div class="col-lg-6 col-md-12 faq-item first-faq-box">
+              <div class="accordion accordion-1">
+                <div class="accordion-item-1">
+                  <div class="title">
+                    <h6><span>01.</span> What is Mobile App Solutions?</h6>
+                  </div>
+                  <div class="accordion-info-1">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
+                      adipiscing elit, sed do eiusmod tempor.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion-item-1">
+                  <div class="title">
+                    <h6><span>02.</span> Who can use Mobile App Solutions?</h6>
+                  </div>
+                  <div class="accordion-info-1">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
+                      adipiscing elit, sed do eiusmod tempor.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion-item-1">
+                  <div class="title">
+                    <h6>
+                      <span>03.</span> What is an iPhone and Android
+                      application?
+                    </h6>
+                  </div>
+                  <div class="accordion-info-1">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
+                      adipiscing elit, sed do eiusmod tempor.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion-item-1">
+                  <div class="title">
+                    <h6>
+                      <span>04.</span> How much does Mobile App Solutions cost?
+                    </h6>
+                  </div>
+                  <div class="accordion-info-1">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
+                      adipiscing elit, sed do eiusmod tempor.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12 faq-item">
+              <div class="accordion accordion-2">
+                <div class="accordion-item-2">
+                  <div class="title">
+                    <h6><span>01.</span> What is Mobile App Solutions?</h6>
+                  </div>
+                  <div class="accordion-info-2">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
+                      adipiscing elit, sed do eiusmod tempor.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion-item-2">
+                  <div class="title">
+                    <h6><span>02.</span> Who can use Mobile App Solutions?</h6>
+                  </div>
+                  <div class="accordion-info-2">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
+                      adipiscing elit, sed do eiusmod tempor.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion-item-2">
+                  <div class="title">
+                    <h6>
+                      <span>03.</span> What is an iPhone and Android
+                      application?
+                    </h6>
+                  </div>
+                  <div class="accordion-info-2">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
+                      adipiscing elit, sed do eiusmod tempor.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="accordion-item-2">
+                  <div class="title">
+                    <h6>
+                      <span>04.</span> How much does Mobile App Solutions cost?
+                    </h6>
+                  </div>
+                  <div class="accordion-info-2">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
+                      adipiscing elit, sed do eiusmod tempor.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Faq Section End -->
+
+      <!-- Team Section Start -->
+      <!-- <section id="team" class="team-area section-padding">
+                <div class="container">
+                    <div class="row">
+						<div class="col-md-12">
+							<div class="section-title">
+								<h6 class="small-title">Team Member</h6>
+								<h2>Expert Team</h2>
+							</div>
+						</div>
+					</div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-team-box">
+                                <div class="team-image">
+                                    <img src="index/assets/img/team\team-1.jpg" alt="team">
+
+                                    <div class="team-social-icon">
+                                        <a href="#"><i class="fa fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="team-info">
+                                    <h3>Rose Hopkins</h3>
+                                    <span>Founder, ceo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-team-box">
+                                <div class="team-image">
+                                    <img src="index/assets/img/team\team-2.jpg" alt="team">
+
+                                    <div class="team-social-icon">
+                                        <a href="#"><i class="fa fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="team-info">
+                                    <h3>Ruben Houston</h3>
+                                    <span>Web Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-team-box">
+                                <div class="team-image">
+                                    <img src="index/assets/img/team\team-3.jpg" alt="team">
+
+                                    <div class="team-social-icon">
+                                        <a href="#"><i class="fa fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="team-info">
+                                    <h3>Monica Frazier</h3>
+                                    <span>Creative Officer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-team-box">
+                                <div class="team-image">
+                                    <img src="index/assets/img/team\team-4.jpg" alt="team">
+
+                                    <div class="team-social-icon">
+                                        <a href="#"><i class="fa fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="team-info">
+                                    <h3>Kevin Haley</h3>
+                                    <span>Project Manager</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+      <!-- Team Section End -->
+
+      <!-- Download Section Start -->
+      <section class="download-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-12 col-sm-12">
+              <div class="download-app-text text-center">
+                <h2>Um novo Modelo para Aumentar o seu Faturamento!</h2>
+                <p>
+                  Entre na Plataforma que mais Oferta serviços pensando
+                  estrategicamente no seu melhor Faturamento!
+                </p>
+                <div class="download-app-button">
+                  <a href="#" class="download-btn">
+                    <span class="fa fa-apple"></span>
+                    <p>
+                      <small>Baixe na</small>
+                      <br />
+                      App Store
+                    </p>
+                  </a>
+                  <a href="#" class="download-btn">
+                    <span class="fa fa-android"></span>
+                    <p>
+                      <small>Baixe na</small>
+                      <br />
+                      Google Play
+                    </p>
+                  </a>
+                  <!-- <a href="#" class="download-btn">
+                                        <span class="fa fa-windows"></span>
+                                        <p>
+                                            <small>Get It On</small>
+                                            <br>
+                                            Windows
+                                        </p>
+                                    </a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Download Section End -->
+
+      <!-- Contact Section Start -->
+      <section id="contact" class="contact-area section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 section-title">
+              <h6 class="small-title">Entre Em Contato</h6>
+              <h2>Estamos Prontos para Tirar Suas Dúvidas</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5">
+              <div class="contact-info">
+                <ul>
+                  <li class="hob">
+                    <div class="icon icon-bg-1">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+                    <span>Endereço</span>
+                    CA 560 Bush St &amp; 20th Ave, Apt 5 San Francisco, 230909,
+                    Canada
+                  </li>
+
+                  <li>
+                    <div class="icon icon-bg-2">
+                      <i class="fa fa-envelope"></i>
+                    </div>
+                    <span>Email</span>
+                    <a href="#">contato@hoopay.com.br</a>
+                    <a href="#">atendimento@hoopay.com</a>
+                  </li>
+
+                  <li>
+                    <div class="icon icon-bg-3">
+                      <i class="fa fa-phone"></i>
+                    </div>
+                    <span>Telefone</span>
+                    <a href="#">+44 587 154756</a>
+                    <a href="#">+55 5555 14574</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <p class="form-message"></p>
+              <br />
+              <form
+                class="contact-form form"
+                id="contact-form"
+                action="mail.php"
+                method="POST"
+              >
+                <div class="controls">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                      <div class="form-group has-error has-danger">
+                        <input
+                          id="form_name"
+                          type="text"
+                          name="name"
+                          placeholder="Digite o seu Nome"
+                          required="required"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                      <div class="form-group has-error has-danger">
+                        <input
+                          id="form_email"
+                          type="email"
+                          name="email"
+                          placeholder="Digite o seu Email"
+                          required="required"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                      <div class="form-group has-error has-danger">
+                        <input
+                          id="form_subject"
+                          type="text"
+                          name="subject"
+                          placeholder="Digite o Assunto"
+                          required="required"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <textarea
+                          id="form_message"
+                          name="message"
+                          placeholder="Digite sua mensagem..."
+                          rows="4"
+                          required="required"
+                        ></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <button type="submit" class="button">
+                        Enviar Mensagem
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section End -->
+
+      <!-- Map Section Start -->
+      <div class="map-area">
+        <div class="map-canvas" id="contact-map"></div>
+      </div>
+      <!-- Map Section End -->
+    </div>
+    <!-- Page Wrapper End -->
+
+    <!-- Footer Section Start -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-content">
+              <div class="footer-colm-1">
+                <a href="#" class="footer-logo">
+                  <img
+                    class="navbar-brand-dark"
+                    src="index/assets/img/logo-dark.png"
+                    style="max-width: 100px; width: 100%"
+                    alt="brand-logo-dark"
+                  />
+                </a>
+                <p>
+                  Tenha em mãos tudo o que você precisa para aumentar consideravelmente o seu faturamento. Conte com uma Equipe especializada para te atender gratuitamente.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12 footer-content">
+              <div class="footer-colm-2">
+                <h5 class="footer-colm-title">Links Rápidos</h5>
+                <ul class="footer-nav">
+                  <li>
+                    <a href="#">Taxas</a>
+                  </li>
+                  <li>
+                    <a href="#">Suporte</a>
+                  </li>
+                  <li>
+                    <a href="#">Contato</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12 footer-content">
+              <div class="footer-colm-3">
+                <h5 class="footer-colm-title">Suporte</h5>
+                <ul class="footer-nav">
+                  <li>
+                    <a href="#">Termos de Serviços</a>
+                  </li>
+                  <li>
+                    <a href="#">Política de Privacidade</a>
+                  </li>
+                  <li>
+                    <a href="#">Perguntas e Respostas</a>
+                  </li>
+                  <li>
+                    <a href="#">Central de Ajuda</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-content">
+              <div class="footer-colm-4 footer-subscribe">
+                <!--<h5 class="footer-colm-title">-->
+                <!--  Contact Information | Subscribe-->
+                <!--</h5>-->
+                <!--<form>-->
+                <!--  <input-->
+                <!--    type="Email"-->
+                <!--    name="email"-->
+                <!--    placeholder="Type Your Email"-->
+                <!--  />-->
+                <!--  <a href="#" class="subscribe-btn">Subscribe</a>-->
+                <!--</form>-->
+                <p>
+                  <a href="tel:234-09026931742">234-09024244654</a> |
+                  <a href="tel:234-09026931742">234-09026931742</a>
+                </p>
+                <p><a href="mailto:contato@hoopay.com.br">contato@hoopay.com.br</a></p>
+                <p><a href="mailto:atendimento@hoopay.com.br">atendimento@hoopay.com.br</a></p>
+                <ul class="footer-social-icon">
+                  <li>
+                    <a href="https://instagram.com/hoopayoficial"><i class="fa fa-instagram instagram"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://facebook.com/hoopayoficial"><i class="fa fa-facebook facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/hoopayoficial"><i class="fa fa-twitter twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://linkedin.com/hoopayoficial"><i class="fa fa-linkedin linkedin"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://youtube.com/hoopayoficial"><i class="fa fa-youtube youtube"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-area text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <p>Copyright &copy; 2021 - Todos os Direitos Reservados.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top back-to-top-pulse"
+      ><i class="fa fa-caret-up"></i
+    ></a>
+
+    <!--Jquery js-->
+    <script src="index/assets/js/jquery-3.5.1.min.js"></script>
+    <script src="index/assets/js/bootstrap.min.js"></script>
+    <script src="index/assets/js/plugins.js"></script>
+    <!-- Gmap3 Min JS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ_mGhah8EApmFiXYYBsdBuygviP2M2EE"></script>
+    <script src="index/assets/js/map.js"></script>
+    <script src="index/assets/js/gmap3.min.js"></script>
+    <!--Site Main js-->
+    <script src="index/assets/js/main.js"></script>
+  </body>
+</html>
