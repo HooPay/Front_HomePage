@@ -1,1448 +1,1488 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>HooPay</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="HooPay" />
+<html>
 
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="index/assets/img/favicon.png"
-    />
+<head>
+  <meta charset="utf-8">
+  <title>HooPay</title>
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Site Main Style sheet css -->
-    <link href="index/assets/css/style.css" rel="stylesheet" />
-    <link href="index/assets/css/responsive.css" rel="stylesheet" />
+  <meta name="keywords"
+    content="pagamentos, plataforma de pagamentos, cartão, PIX, boleto, transações financeiras, vendas, comércio online. 47875120000104, 47.875.120/0001-04">
+  <meta name="description"
+    content="Facilite suas vendas! Aceite pagamentos com cartão, PIX, boleto e mais. Experimente nossa plataforma de pagamentos agora!" />
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-S1FSY1BS8D"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+  <!-- Stylesheets -->
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/meanmenu.min.css" rel="stylesheet">
+  <link href="assets/css/responsive.css" rel="stylesheet">
 
-      gtag("config", "G-S1FSY1BS8D");
-    </script>
+  <link href="../../css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="../../css2-1?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <style>
-      .preloader {
-        position: fixed;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        z-index: 9999999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        background: #fff;
-        transition: 0.3s all ease;
-      }
+  <link rel="shortcut icon" href="https://dashboard.hoopay.com.br/shared/assets/02.png" type="image/x-icon">
+  <link rel="icon" href="https://dashboard.hoopay.com.br/shared/assets/02.png" type="image/x-icon">
 
-      [data-x-mode="true"] .preloader {
-        display: none;
-      }
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-      .preloader * {
-        box-sizing: content-box;
-      }
+  <style>
+    .sec-title_heading span {
+      position: relative;
+      font-style: initial;
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      text-transform: initial;
+    }
+  </style>
+</head>
 
-      .preloader.loaded {
-        opacity: 0;
-        visibility: hidden;
-      }
+<body>
 
-      .preloader * + .preloader-title {
-        margin-top: 120px;
-      }
+  <div class="page-wrapper">
 
-      .preloader-title {
-        font-weight: 400;
-        text-transform: none;
-      }
-
-      .preloader-body {
-        text-align: center;
-      }
-
-      .cssload-bell {
-        position: absolute;
-        width: 97px;
-        height: 99px;
-        border-radius: 100%;
-        left: calc(50% - 49px);
-      }
-
-      .cssload-circle {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-      }
-
-      .cssload-circle .cssload-inner {
-        width: 100%;
-        height: 100%;
-        border-radius: 100%;
-        border: 5px solid rgba(38, 171, 220, 0.7);
-        border-right: none;
-        border-top: none;
-        background-clip: padding;
-        box-shadow: inset 0 0 10px rgba(38, 171, 220, 0.15);
-      }
-
-      .cssload-circle:nth-of-type(0) {
-        transform: rotate(0deg);
-      }
-
-      .cssload-circle:nth-of-type(0) .cssload-inner {
-        animation: cssload-spin 2.3s infinite linear;
-      }
-
-      .cssload-circle:nth-of-type(1) {
-        transform: rotate(70deg);
-      }
-
-      .cssload-circle:nth-of-type(1) .cssload-inner {
-        animation: cssload-spin 2.3s infinite linear;
-      }
-
-      .cssload-circle:nth-of-type(2) {
-        transform: rotate(140deg);
-      }
-
-      .cssload-circle:nth-of-type(2) .cssload-inner {
-        animation: cssload-spin 2.3s infinite linear;
-      }
-
-      .cssload-bell {
-        animation: cssload-spin 5.75s infinite linear;
-      }
-
-      @keyframes cssload-spin {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="preloader loaded">
-      <div class="preloader-container">
-        <div class="cssload-bell">
-          <div class="cssload-circle">
-            <div class="cssload-inner"></div>
-          </div>
-          <div class="cssload-circle">
-            <div class="cssload-inner"></div>
-          </div>
-          <div class="cssload-circle">
-            <div class="cssload-inner"></div>
-          </div>
-          <div class="cssload-circle">
-            <div class="cssload-inner"></div>
-          </div>
-          <div class="cssload-circle">
-            <div class="cssload-inner"></div>
-          </div>
-        </div>
-        <h5 class="preloader-title">
-          <img
-            src="index/assets/img/logo-white.png"
-            style="max-width: 90px; width: 100%"
-          />
-        </h5>
-      </div>
-    </div>
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <!-- Cursor End -->
 
     <!-- Preloader -->
-    <!-- <div class="preloader">
-            <div class="loader">
-                <div class="shadow"></div>
-                <div class="box"></div>
-            </div>
-        </div> -->
-    <!-- End Preloader -->
-
-    <!-- Page Wrapper Start -->
-    <div class="page-wrapper">
-      <!-- Navbar Start -->
-      <nav
-        class="navbar navbar-b navbar-trans navbar-expand-md fixed-top"
-        id="mainNav"
-      >
-        <div class="container">
-          <a class="navbar-brand js-scroll" href="index.html">
-            <img
-              class="navbar-brand-regular"
-              src="index/assets/img/logo-white.png"
-              style="max-width: 100px; width: 100%"
-              alt="brand-logo-white"
-            />
-            <img
-              class="navbar-brand-dark"
-              src="index/assets/img/logo-dark.png"
-              style="max-width: 100px; width: 100%"
-              alt="brand-logo-dark"
-            />
-          </a>
-          <button
-            class="navbar-toggler collapsed"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarDefault"
-            aria-controls="navbarDefault"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <div
-            class="navbar-collapse collapse justify-content-end"
-            id="navbarDefault"
-          >
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link js-scroll active" href="#home">Início</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link js-scroll" href="#price">Taxas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link js-scroll" href="#faq">Suporte</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link js-scroll" href="#contact">Contato</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- Navbar End -->
-
-      <!-- Home Section Start -->
-      <header
-        id="home"
-        class="home-area hero-equal-height section-padding overflow-hidden d-flex align-items-center"
-      >
-        <div class="container">
-          <div class="row d-flex align-items-center">
-            <div class="col-12 col-md-7 col-lg-6">
-              <div class="text-left home-content z-index position-relative">
-                <h1>
-                  CONTE COM OS RECURSOS QUE IRÃO IMPULSIONAR O SEU NEGÓCIO
-                </h1>
-                <p>
-                  Diversas Ferramentas gratuitas para você operar da maneira
-                  mais Simples possível.
-                </p>
-                <div class="apps-store-btn">
-                  <a href="#" class="apps-store-btn-1">
-                    <img src="index/assets/img/app-store-1.png" alt="" />
-                  </a>
-                  <a href="#">
-                    <img src="index/assets/img/app-store-2.png" alt="" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-5 col-lg-6">
-              <div class="text-center z-index position-relative home-image">
-                <img
-                  src="index/assets/img/hero-mockup.png"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="svg-shape-bottom">
-          <img
-            src="index/assets/img/home-bottom-shape.png"
-            class="bottom-shape img-fluid"
-            alt=""
-          />
-        </div>
-      </header>
-      <!-- Home Section End -->
-
-      <!-- How it Works Section Start -->
-      <div class="works-area section-padding">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 offset-md-2">
-              <div class="section-title">
-                <h6 class="small-title">Como Funciona</h6>
-                <h2>
-                  Improved Design and Performance of<br />
-                  High Level Finance Apps
-                </h2>
-              </div>
-            </div>
-          </div>
-          <div class="row d-flex align-items-center">
-            <div class="col-lg-4 col-md-6 col-sm-12 works-item-box">
-              <div class="works-item">
-                <div class="works-icon icon-bg-1">
-                  <i class="ti-credit-card"></i>
-                </div>
-                <div class="works-info">
-                  <h3>Métodos de Pagamento</h3>
-                  <p>
-                    Ofereça ao seu cliente Boleto, Cartão de Crédito e Pix
-                    Parcelado
-                  </p>
-                </div>
-                <span class="work-count">1</span>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 works-item-box">
-              <div class="works-item">
-                <div class="works-icon icon-bg-2"><i class="ti-money"></i></div>
-                <div class="works-info">
-                  <h3>Taxas Acessíveis</h3>
-                  <p>Quanto Maior o seu Faturamento menor é a sua Taxa!</p>
-                </div>
-                <span class="work-count">2</span>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 works-item-box">
-              <div class="works-item">
-                <div class="works-icon icon-bg-3">
-                  <i class="ti-cloud"></i>
-                </div>
-                <div class="works-info">
-                  <h3>Área de Membros</h3>
-                  <p>Insira seu Conteúdo Digital Gratuitamente</p>
-                </div>
-                <span class="work-count">2</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="row d-flex align-items-center mt-5">
-            <div class="col-lg-4 col-md-6 col-sm-12 works-item-box">
-              <div class="works-item">
-                <div class="works-icon icon-bg-1">
-                  <i class="ti-face-smile"></i>
-                </div>
-                <div class="works-info">
-                  <h3>Fácil de Customizar</h3>
-                  <p>
-                    Personalize rapidamente o seu Checkout ou sua Loja Virtual
-                  </p>
-                </div>
-                <span class="work-count">2</span>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 works-item-box">
-              <div class="works-item">
-                <div class="works-icon icon-bg-2">
-                  <i class="ti-stats-up"></i>
-                </div>
-                <div class="works-info">
-                  <h3>Conversão Personalizada</h3>
-                  <p>
-                    Uma equipe especializada que melhora a aprovação de suas
-                    vendas
-                  </p>
-                </div>
-                <span class="work-count">3</span>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 works-item-box">
-              <div class="works-item">
-                <div class="works-icon icon-bg-3">
-                  <i class="ti-bolt"></i>
-                </div>
-                <div class="works-info">
-                  <h3>Diversas Integrações</h3>
-                  <p>
-                    Ferramentas Gratuitas para Vendas, N.F., Logística e etc.
-                  </p>
-                </div>
-                <span class="work-count">3</span>
-              </div>
+    <div class="loader-wrap">
+      <div class="preloader">
+        <div class="preloader-close">x</div>
+        <div id="handle-preloader" class="handle-preloader">
+          <div class="animation-preloader">
+            <div class="txt-loading">
+              <span data-text-preloader="C" class="letters-loading">C</span>
+              <span data-text-preloader="A" class="letters-loading">A</span>
+              <span data-text-preloader="R" class="letters-loading">R</span>
+              <span data-text-preloader="R" class="letters-loading">R</span>
+              <span data-text-preloader="E" class="letters-loading">E</span>
+              <span data-text-preloader="G" class="letters-loading">G</span>
+              <span data-text-preloader="A" class="letters-loading">A</span>
+              <span data-text-preloader="N" class="letters-loading">N</span>
+              <span data-text-preloader="D" class="letters-loading">D</span>
+              <span data-text-preloader="O" class="letters-loading">O</span>
             </div>
           </div>
         </div>
       </div>
-      <!-- How it Works Section End -->
-
-      <!-- About Section Start -->
-      <section id="about" class="about-area section-padding">
-        <div class="container">
-          <div class="row d-flex align-items-center">
-            <div class="col-lg-6 col-md-12">
-              <div class="about-img animation-bounce">
-                <img
-                  src="index/assets/img/about.png"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-12">
-              <div class="about-info">
-                <h6 class="small-title">About Our Apps</h6>
-                <h2>Increase your productivity with Finance Apps!</h2>
-                <div class="row d-flex align-items-center">
-                  <div class="col-lg-12 col-md-6 col-sm-12 features-item-box">
-                    <div class="features-item">
-                      <div class="features-icon color-icon-1">
-                        <i class="ti-palette"></i>
-                      </div>
-                      <div class="features-info">
-                        <h3>Clean Design</h3>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 col-md-6 col-sm-12 features-item-box">
-                    <div class="features-item">
-                      <div class="features-icon color-icon-2">
-                        <i class="ti-layers-alt"></i>
-                      </div>
-                      <div class="features-info">
-                        <h3>Secure Data</h3>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 col-md-6 col-sm-12 features-item-box">
-                    <div class="features-item">
-                      <div class="features-icon color-icon-3">
-                        <i class="ti-comments"></i>
-                      </div>
-                      <div class="features-info">
-                        <h3>Retina Ready</h3>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- About Section End -->
-
-      <!-- Apps Overview Section Start -->
-      <section class="overview-area section-padding">
-        <div class="container">
-          <div class="row d-flex align-items-center">
-            <div class="col-lg-6 col-md-12">
-              <div class="overview-info">
-                <h6 class="small-title">WE ARE THE BEST</h6>
-                <h2>Awesome features best app for your modern lifestyle</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore
-                </p>
-                <div class="row">
-                  <div class="col-lg-12 col-md-6 col-sm-12">
-                    <div class="why-choos-list active">
-                      <i class="fa fa-check-circle"></i>
-                      <span>Increase Your Sales</span>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 col-md-6 col-sm-12">
-                    <div class="why-choos-list">
-                      <i class="fa fa-check-circle"></i>
-                      <span>Fast app Downloader</span>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 col-md-6 col-sm-12">
-                    <div class="why-choos-list">
-                      <i class="fa fa-check-circle"></i>
-                      <span>100% Responsive Design</span>
-                    </div>
-                  </div>
-                  <div class="col-lg-12 col-md-6 col-sm-12">
-                    <div class="why-choos-list">
-                      <i class="fa fa-check-circle"></i>
-                      <span> 24 Support (Everyday)</span>
-                    </div>
-                  </div>
-                </div>
-                <a href="#" class="button">Learn More</a>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-12">
-              <div class="overview-img text-center">
-                <img
-                  src="index/assets/img/overview.png"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Apps Overview Section End -->
-
-      <!-- Apps Overview-2 Section Start -->
-      <section class="overview-area-2 section-padding">
-        <div class="container">
-          <div class="row d-flex align-items-center">
-            <div class="col-lg-6 col-md-12">
-              <div class="overview-img-2 text-center">
-                <img
-                  src="index/assets/img/overview-2.png"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-12">
-              <div class="overview-info-2">
-                <h6 class="small-title">Apps Overview</h6>
-                <h2>Share your apps data with friends easily connect</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  commodo consequat.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore
-                </p>
-                <ul>
-                  <li>
-                    <div class="overview-share-icon">
-                      <i class="ti-settings"></i>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="overview-share-icon">
-                      <i class="ti-heart"></i>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="overview-share-icon">
-                      <i class="ti-shield"></i>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="overview-share-icon">
-                      <i class="ti-server"></i>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Apps Overview-2 Section End -->
-
-      <!-- Video & Counter Section Start -->
-      <section class="video-area section-padding">
-        <div class="container">
-          <div class="row d-flex align-items-center">
-            <div class="col-md-10 offset-md-1">
-              <div class="video-content">
-                <a
-                  href="https://www.youtube.com/watch?v=L7Cz9Sx-rbg"
-                  class="iq-video popup-video mfp-iframe video-btn"
-                >
-                  <i class="fa fa-play-circle-o"></i
-                ></a>
-                <h5 class="mt-4 text-white">Watch Video Introduction</h5>
-              </div>
-            </div>
-          </div>
-          <div class="counter-inner-box">
-            <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-12 counter-item">
-                <div class="single-counter-box">
-                  <div class="single-counter">
-                    <i class="pe-7s-cloud-download"></i>
-                    <h3 class="odometer" data-count="1700">00</h3>
-                    <p>Complete Project</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 counter-item">
-                <div class="single-counter-box">
-                  <div class="single-counter">
-                    <i class="pe-7s-like"></i>
-                    <h3 class="odometer" data-count="1300">00</h3>
-                    <p>Happy Client</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 counter-item">
-                <div class="single-counter-box">
-                  <div class="single-counter">
-                    <i class="pe-7s-albums"></i>
-                    <h3 class="odometer" data-count="1200">00</h3>
-                    <p>Award Winner</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Video & Counter Section End -->
-
-      <!-- Screenshort Section Start -->
-      <section id="screenshort" class="screenshort-area section-padding">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="section-title">
-                <h6 class="small-title">Latest Short</h6>
-                <h2>Beautiful Interface</h2>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="screenshort-slide-content">
-                <div class="screenshort-slide owl-carousel owl-theme">
-                  <div class="screenshort-item">
-                    <img
-                      src="index/assets/img/short\short-1.jpg"
-                      class="img-fluid"
-                      alt=""
-                    />
-                  </div>
-                  <div class="screenshort-item">
-                    <img
-                      src="index/assets/img/short\short-2.jpg"
-                      class="img-fluid"
-                      alt=""
-                    />
-                  </div>
-                  <div class="screenshort-item">
-                    <img
-                      src="index/assets/img/short\short-3.jpg"
-                      class="img-fluid"
-                      alt=""
-                    />
-                  </div>
-                  <div class="screenshort-item">
-                    <img
-                      src="index/assets/img/short\short-4.jpg"
-                      class="img-fluid"
-                      alt=""
-                    />
-                  </div>
-                  <div class="screenshort-item">
-                    <img
-                      src="index/assets/img/short\short-5.jpg"
-                      class="img-fluid"
-                      alt=""
-                    />
-                  </div>
-                  <div class="screenshort-item">
-                    <img
-                      src="index/assets/img/short\short-6.jpg"
-                      class="img-fluid"
-                      alt=""
-                    />
-                  </div>
-                  <div class="screenshort-item">
-                    <img
-                      src="index/assets/img/short\short-7.jpg"
-                      class="img-fluid"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Screenshort Section End -->
-
-      <!-- Pricing Section Start -->
-      <section id="price" class="price-area section-padding">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 section-title">
-              <h6 class="small-title">Comfortable Price</h6>
-              <h2>Finance Pricing Plan</h2>
-            </div>
-            <!-- pricing item -->
-            <div class="col-lg-4 col-md-6 col-sm-12 price-item">
-              <div class="single-price-item">
-                <div class="pricing-header">
-                  <h3 class="pricing-title">Basic Plan</h3>
-                </div>
-                <div class="pricing-body">
-                  <div class="price-icon icon-bg-1">
-                    <i class="ti-comments"></i>
-                  </div>
-                  <div class="price-wrapper">
-                    <span class="currency">$</span>
-                    <span class="price">29</span>
-                    <span class="period">/Month</span>
-                  </div>
-                  <ul class="list">
-                    <li class="active">Unlimited Website</li>
-                    <li class="active">Unlimited Users</li>
-                    <li class="active">5 GB Bandwidth</li>
-                    <li class="active">Highest Speed</li>
-                    <li>Data Security and Backupss</li>
-                    <li>1 GB Storage</li>
-                    <li>24x7 Great Support</li>
-                    <li>Monthly Reports and Analytics</li>
-                  </ul>
-                </div>
-                <div class="pricing-footer">
-                  <a href="#" class="button">Select Plan</a>
-                </div>
-              </div>
-            </div>
-            <!-- pricing item end -->
-            <!-- pricing item -->
-            <div class="col-lg-4 col-md-6 col-sm-12 price-item">
-              <div class="single-price-item active">
-                <div class="pricing-header">
-                  <h3 class="pricing-title">Advanced Plan</h3>
-                </div>
-                <div class="pricing-body">
-                  <div class="price-icon icon-bg-2">
-                    <i class="ti-pulse"></i>
-                  </div>
-                  <div class="price-wrapper">
-                    <span class="currency">$</span>
-                    <span class="price">49</span>
-                    <span class="period">/Month</span>
-                  </div>
-                  <ul class="list">
-                    <li class="active">Unlimited Website</li>
-                    <li class="active">Unlimited Users</li>
-                    <li class="active">10 GB Bandwidth</li>
-                    <li class="active">Highest Speed</li>
-                    <li class="active">Data Security and Backupss</li>
-                    <li class="active">5 GB Storage</li>
-                    <li>24x7 Great Support</li>
-                    <li>Monthly Reports and Analytics</li>
-                  </ul>
-                </div>
-                <div class="pricing-footer">
-                  <a href="#" class="button">Select Plan</a>
-                </div>
-              </div>
-            </div>
-            <!-- pricing item end -->
-            <!-- pricing item -->
-            <div class="col-lg-4 col-md-6 col-sm-12 price-item">
-              <div class="single-price-item">
-                <div class="pricing-header">
-                  <h3 class="pricing-title">Expert Plan</h3>
-                </div>
-                <div class="pricing-body">
-                  <div class="price-icon icon-bg-3">
-                    <i class="ti-bolt"></i>
-                  </div>
-                  <div class="price-wrapper">
-                    <span class="currency">$</span>
-                    <span class="price">79</span>
-                    <span class="period">/Month</span>
-                  </div>
-                  <ul class="list">
-                    <li class="active">Unlimited Website</li>
-                    <li class="active">Unlimited Users</li>
-                    <li class="active">15 GB Bandwidth</li>
-                    <li class="active">Highest Speed</li>
-                    <li class="active">Data Security and Backupss</li>
-                    <li class="active">10 GB Storage</li>
-                    <li class="active">24x7 Great Support</li>
-                    <li class="active">Monthly Reports and Analytics</li>
-                  </ul>
-                </div>
-                <div class="pricing-footer">
-                  <a href="#" class="button">Select Plan</a>
-                </div>
-              </div>
-            </div>
-            <!-- pricing item end -->
-          </div>
-        </div>
-      </section>
-      <!-- Pricing Section End -->
-
-      <!-- Testimonials Section Start -->
-      <!-- <section id="review" class="testimonial-area section-padding">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="section-title">
-                                <h6 class="small-title">Client Say</h6>
-                                <h2>Reviews Our Apps</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12">
-                            <div id="testimonial-slide" class="owl-carousel owl-theme owl-loaded owl-drag">
-                                <div class="single-testimonial">
-                                    <div class="testi-content-inner">
-                                        <div class="testimonial-rating">
-                                            <ul class="rating text-center">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div>
-                                        <div class="testimonial-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                                        </div>
-                                        <div class="testimonial-bio">
-                                            <div class="avatar">
-                                                <img src="index/assets/img/testimonial-1.jpg" alt="testimonial">
-                                            </div>
-                                            <div class="bio-info">
-                                                <h3 class="name">Saabir al-Obeid</h3>
-                                                <span>Business Man</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="single-testimonial">
-                                    <div class="testi-content-inner">
-                                        <div class="testimonial-rating">
-                                            <ul class="rating text-center">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                        <div class="testimonial-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                                        </div>
-                                        <div class="testimonial-bio">
-                                            <div class="avatar">
-                                                <img src="index/assets/img/testimonial-2.jpg" alt="testimonial">
-                                            </div>
-                                            <div class="bio-info">
-                                                <h3 class="name">Rose Hopkins</h3>
-                                                <span>Founder of Apple</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="single-testimonial">
-                                    <div class="testi-content-inner">
-                                        <div class="testimonial-rating">
-                                            <ul class="rating text-center">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div>
-                                        <div class="testimonial-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                                        </div>
-                                        <div class="testimonial-bio">
-                                            <div class="avatar">
-                                                <img src="index/assets/img/testimonial-3.jpg" alt="testimonial">
-                                            </div>
-                                            <div class="bio-info">
-                                                <h3 class="name">Ruben Houston</h3>
-                                                <span>Ceo of Google</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="single-testimonial">
-                                    <div class="testi-content-inner">
-                                        <div class="testimonial-rating">
-                                            <ul class="rating text-center">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                        <div class="testimonial-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                                        </div>
-                                        <div class="testimonial-bio">
-                                            <div class="avatar">
-                                                <img src="index/assets/img/testimonial-4.jpg" alt="testimonial">
-                                            </div>
-                                            <div class="bio-info">
-                                                <h3 class="name">Monica Frazier</h3>
-                                                <span>Coo of Facebook</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-      <!-- Testimonials Section End -->
-
-      <!-- Faq Section Start -->
-      <section id="faq" class="faq-area section-padding">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 section-title">
-              <h6 class="small-title">Talvez sua dúvida esteja abaixo</h6>
-              <h2>Perguntas e Respostas Frequentes</h2>
-            </div>
-            <div class="col-lg-6 col-md-12 faq-item first-faq-box">
-              <div class="accordion accordion-1">
-                <div class="accordion-item-1">
-                  <div class="title">
-                    <h6><span>01.</span> What is Mobile App Solutions?</h6>
-                  </div>
-                  <div class="accordion-info-1">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
-                      adipiscing elit, sed do eiusmod tempor.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="accordion-item-1">
-                  <div class="title">
-                    <h6><span>02.</span> Who can use Mobile App Solutions?</h6>
-                  </div>
-                  <div class="accordion-info-1">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
-                      adipiscing elit, sed do eiusmod tempor.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="accordion-item-1">
-                  <div class="title">
-                    <h6>
-                      <span>03.</span> What is an iPhone and Android
-                      application?
-                    </h6>
-                  </div>
-                  <div class="accordion-info-1">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
-                      adipiscing elit, sed do eiusmod tempor.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="accordion-item-1">
-                  <div class="title">
-                    <h6>
-                      <span>04.</span> How much does Mobile App Solutions cost?
-                    </h6>
-                  </div>
-                  <div class="accordion-info-1">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
-                      adipiscing elit, sed do eiusmod tempor.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-12 faq-item">
-              <div class="accordion accordion-2">
-                <div class="accordion-item-2">
-                  <div class="title">
-                    <h6><span>01.</span> What is Mobile App Solutions?</h6>
-                  </div>
-                  <div class="accordion-info-2">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
-                      adipiscing elit, sed do eiusmod tempor.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="accordion-item-2">
-                  <div class="title">
-                    <h6><span>02.</span> Who can use Mobile App Solutions?</h6>
-                  </div>
-                  <div class="accordion-info-2">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
-                      adipiscing elit, sed do eiusmod tempor.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="accordion-item-2">
-                  <div class="title">
-                    <h6>
-                      <span>03.</span> What is an iPhone and Android
-                      application?
-                    </h6>
-                  </div>
-                  <div class="accordion-info-2">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
-                      adipiscing elit, sed do eiusmod tempor.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="accordion-item-2">
-                  <div class="title">
-                    <h6>
-                      <span>04.</span> How much does Mobile App Solutions cost?
-                    </h6>
-                  </div>
-                  <div class="accordion-info-2">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud consectetur
-                      adipiscing elit, sed do eiusmod tempor.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Faq Section End -->
-
-      <!-- Team Section Start -->
-      <!-- <section id="team" class="team-area section-padding">
-                <div class="container">
-                    <div class="row">
-						<div class="col-md-12">
-							<div class="section-title">
-								<h6 class="small-title">Team Member</h6>
-								<h2>Expert Team</h2>
-							</div>
-						</div>
-					</div>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-team-box">
-                                <div class="team-image">
-                                    <img src="index/assets/img/team\team-1.jpg" alt="team">
-
-                                    <div class="team-social-icon">
-                                        <a href="#"><i class="fa fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-instagram"></i></a>
-                                    </div>
-                                </div>
-
-                                <div class="team-info">
-                                    <h3>Rose Hopkins</h3>
-                                    <span>Founder, ceo</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-team-box">
-                                <div class="team-image">
-                                    <img src="index/assets/img/team\team-2.jpg" alt="team">
-
-                                    <div class="team-social-icon">
-                                        <a href="#"><i class="fa fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-instagram"></i></a>
-                                    </div>
-                                </div>
-
-                                <div class="team-info">
-                                    <h3>Ruben Houston</h3>
-                                    <span>Web Developer</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-team-box">
-                                <div class="team-image">
-                                    <img src="index/assets/img/team\team-3.jpg" alt="team">
-
-                                    <div class="team-social-icon">
-                                        <a href="#"><i class="fa fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-instagram"></i></a>
-                                    </div>
-                                </div>
-
-                                <div class="team-info">
-                                    <h3>Monica Frazier</h3>
-                                    <span>Creative Officer</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="single-team-box">
-                                <div class="team-image">
-                                    <img src="index/assets/img/team\team-4.jpg" alt="team">
-
-                                    <div class="team-social-icon">
-                                        <a href="#"><i class="fa fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-instagram"></i></a>
-                                    </div>
-                                </div>
-
-                                <div class="team-info">
-                                    <h3>Kevin Haley</h3>
-                                    <span>Project Manager</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-      <!-- Team Section End -->
-
-      <!-- Download Section Start -->
-      <section class="download-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-md-12 col-sm-12">
-              <div class="download-app-text text-center">
-                <h2>Um novo Modelo para Aumentar o seu Faturamento!</h2>
-                <p>
-                  Entre na Plataforma que mais Oferta serviços pensando
-                  estrategicamente no seu melhor Faturamento!
-                </p>
-                <div class="download-app-button">
-                  <a href="#" class="download-btn">
-                    <span class="fa fa-apple"></span>
-                    <p>
-                      <small>Baixe na</small>
-                      <br />
-                      App Store
-                    </p>
-                  </a>
-                  <a href="#" class="download-btn">
-                    <span class="fa fa-android"></span>
-                    <p>
-                      <small>Baixe na</small>
-                      <br />
-                      Google Play
-                    </p>
-                  </a>
-                  <!-- <a href="#" class="download-btn">
-                                        <span class="fa fa-windows"></span>
-                                        <p>
-                                            <small>Get It On</small>
-                                            <br>
-                                            Windows
-                                        </p>
-                                    </a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Download Section End -->
-
-      <!-- Contact Section Start -->
-      <section id="contact" class="contact-area section-padding">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 section-title">
-              <h6 class="small-title">Entre Em Contato</h6>
-              <h2>Estamos Prontos para Tirar Suas Dúvidas</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-5">
-              <div class="contact-info">
-                <ul>
-                  <li class="hob">
-                    <div class="icon icon-bg-1">
-                      <i class="fa fa-map-marker"></i>
-                    </div>
-                    <span>Endereço</span>
-                    CA 560 Bush St &amp; 20th Ave, Apt 5 San Francisco, 230909,
-                    Canada
-                  </li>
-
-                  <li>
-                    <div class="icon icon-bg-2">
-                      <i class="fa fa-envelope"></i>
-                    </div>
-                    <span>Email</span>
-                    <a href="#">contato@hoopay.com.br</a>
-                    <a href="#">atendimento@hoopay.com</a>
-                  </li>
-
-                  <li>
-                    <div class="icon icon-bg-3">
-                      <i class="fa fa-phone"></i>
-                    </div>
-                    <span>Telefone</span>
-                    <a href="#">+44 587 154756</a>
-                    <a href="#">+55 5555 14574</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-7">
-              <p class="form-message"></p>
-              <br />
-              <form
-                class="contact-form form"
-                id="contact-form"
-                action="mail.php"
-                method="POST"
-              >
-                <div class="controls">
-                  <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                      <div class="form-group has-error has-danger">
-                        <input
-                          id="form_name"
-                          type="text"
-                          name="name"
-                          placeholder="Digite o seu Nome"
-                          required="required"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                      <div class="form-group has-error has-danger">
-                        <input
-                          id="form_email"
-                          type="email"
-                          name="email"
-                          placeholder="Digite o seu Email"
-                          required="required"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12">
-                      <div class="form-group has-error has-danger">
-                        <input
-                          id="form_subject"
-                          type="text"
-                          name="subject"
-                          placeholder="Digite o Assunto"
-                          required="required"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <textarea
-                          id="form_message"
-                          name="message"
-                          placeholder="Digite sua mensagem..."
-                          rows="4"
-                          required="required"
-                        ></textarea>
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <button type="submit" class="button">
-                        Enviar Mensagem
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Contact Section End -->
-
-      <!-- Map Section Start -->
-      <div class="map-area">
-        <div class="map-canvas" id="contact-map"></div>
-      </div>
-      <!-- Map Section End -->
     </div>
-    <!-- Page Wrapper End -->
+    <!-- Preloader End -->
 
-    <!-- Footer Section Start -->
-    <footer class="footer">
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12 footer-content">
-              <div class="footer-colm-1">
-                <a href="#" class="footer-logo">
-                  <img
-                    class="navbar-brand-dark"
-                    src="index/assets/img/logo-dark.png"
-                    style="max-width: 100px; width: 100%"
-                    alt="brand-logo-dark"
-                  />
-                </a>
-                <p>
-                  Tenha em mãos tudo o que você precisa para aumentar consideravelmente o seu faturamento. Conte com uma Equipe especializada para te atender gratuitamente.
-                </p>
+    <!-- Main Header -->
+    <header class="main-header header-style-one">
+
+      <!-- Header Lower -->
+      <div class="header-lower">
+        <div class="auto-container">
+          <div class="inner-container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+
+              <div class="logo-box">
+                <div class="logo"><a href="index.html"><img src="https://dashboard.hoopay.com.br/shared/assets/15_2.png"
+                      alt="" title="" style="max-width: 150px;"></a></div>
               </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-12 footer-content">
-              <div class="footer-colm-2">
-                <h5 class="footer-colm-title">Links Rápidos</h5>
-                <ul class="footer-nav">
-                  <li>
-                    <a href="#">Taxas</a>
-                  </li>
-                  <li>
-                    <a href="#">Suporte</a>
-                  </li>
-                  <li>
-                    <a href="#">Contato</a>
-                  </li>
-                </ul>
+
+              <div class="nav-outer d-flex flex-wrap">
+                <!-- Main Menu -->
+                <nav class="main-menu navbar-expand-md">
+                  <div class="navbar-header">
+                    <!-- Toggle Button -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                      aria-label="Toggle navigation">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                  </div>
+
+                  <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+                    <ul class="navigation clearfix">
+                      <li><a href="#">Início</a></li>
+                      <li><a href="#support">Suporte</a></li>
+                      <li><a href="#contact">Contato</a></li>
+
+                      <!-- <li class="dropdown"><a href="#"></a>
+                        <ul>
+                          <li><a href="index.html">HomePage 01</a></li>
+                          <li><a href="index-2.html">HomePage 02</a></li>
+                          <li><a href="index-3.html">HomePage 03</a></li>
+                          <li class="dropdown"><a href="#">Header Style</a>
+                            <ul>
+                              <li><a href="index.html">Header 01</a></li>
+                              <li><a href="index-2.html">Header 02</a></li>
+                              <li><a href="index-3.html">Header 03</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li> 
+                      <li><a href="about.html">Suporte</a></li>
+                      <li class="dropdown"><a href="#"></a>
+                        <ul>
+                          <li><a href="faq.html">Faq</a></li>
+                          <li><a href="pricing.html">Price</a></li>
+                          <li><a href="testimonial.html">Testimonial</a></li>
+                          <li><a href="login.html">Login</a></li>
+                          <li><a href="register.html">Register</a></li>
+                          <li><a href="reset.html">Forgot password</a></li>
+                          <li class="dropdown"><a href="#">Team</a>
+                            <ul>
+                              <li><a href="team.html">Team</a></li>
+                              <li><a href="team-detail.html">Team detail</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="dropdown"><a href="#">Services</a>
+                        <ul>
+                          <li><a href="services.html">Services</a></li>
+                          <li><a href="service-detail.html">Services detail</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown"><a href="#">Blog</a>
+                        <ul>
+                          <li><a href="blog.html">Blog grid</a></li>
+                          <li><a href="blog-classic.html">Blog classic</a></li>
+                          <li><a href="news-detail.html">Blog detail</a></li>
+                          <li><a href="not-found.html">Not found</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="contact.html">Contact</a></li> -->
+                    </ul>
+                  </div>
+                </nav>
               </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-12 footer-content">
-              <div class="footer-colm-3">
-                <h5 class="footer-colm-title">Suporte</h5>
-                <ul class="footer-nav">
-                  <li>
-                    <a href="#">Termos de Serviços</a>
-                  </li>
-                  <li>
-                    <a href="#">Política de Privacidade</a>
-                  </li>
-                  <li>
-                    <a href="#">Perguntas e Respostas</a>
-                  </li>
-                  <li>
-                    <a href="#">Central de Ajuda</a>
-                  </li>
-                </ul>
+
+              <!-- Main Menu End-->
+              <div class="outer-box d-flex align-items-center flex-wrap">
+
+                <!-- Language DropDown -->
+                <!-- <div class="language-dropdown">
+                  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <span class="flag"><img src="assets/images/icons/flag.png" alt=""></span> <span
+                      class="fa-solid fa-angle-down fa-fw"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#"><span class="flag"><img src="assets/images/icons/flag.png"
+                            alt=""></span> English</a></li>
+                    <li><a class="dropdown-item" href="#"><span class="flag"><img src="assets/images/icons/arabic.png"
+                            alt=""></span> Arbic</a></li>
+                    <li><a class="dropdown-item" href="#"><span class="flag"><img src="assets/images/icons/germany.png"
+                            alt=""></span> German</a></li>
+                    <li><a class="dropdown-item" href="#"><span class="flag"><img src="assets/images/icons/france.png"
+                            alt=""></span> French</a></li>
+                  </ul>
+                </div> -->
+
+                <!-- Button Box -->
+                <div class="main-header_buttons">
+                  <a href="https://dashboard.hoopay.com.br/login.html" class="template-btn btn-style-two">
+                    <span class="btn-wrap">
+                      <span class="text-one">Login</span>
+                      <span class="text-two">Login</span>
+                    </span>
+                  </a>
+                  <a href="https://dashboard.hoopay.com.br/login.html" class="template-btn btn-style-one">
+                    <span class="btn-wrap">
+                      <span class="text-one">Cadastre-se</span>
+                      <span class="text-two">Cadastre-se</span>
+                    </span>
+                  </a>
+                </div>
+
+                <!-- Mobile Navigation Toggler -->
+                <div class="mobile-nav-toggler">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24"
+                    height="24" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 6l16 0"></path>
+                    <path d="M4 12l16 0"></path>
+                    <path d="M4 18l16 0"></path>
+                  </svg>
+                </div>
+
               </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 footer-content">
-              <div class="footer-colm-4 footer-subscribe">
-                <!--<h5 class="footer-colm-title">-->
-                <!--  Contact Information | Subscribe-->
-                <!--</h5>-->
-                <!--<form>-->
-                <!--  <input-->
-                <!--    type="Email"-->
-                <!--    name="email"-->
-                <!--    placeholder="Type Your Email"-->
-                <!--  />-->
-                <!--  <a href="#" class="subscribe-btn">Subscribe</a>-->
-                <!--</form>-->
-                <p>
-                  <a href="tel:234-09026931742">234-09024244654</a> |
-                  <a href="tel:234-09026931742">234-09026931742</a>
-                </p>
-                <p><a href="mailto:contato@hoopay.com.br">contato@hoopay.com.br</a></p>
-                <p><a href="mailto:atendimento@hoopay.com.br">atendimento@hoopay.com.br</a></p>
-                <ul class="footer-social-icon">
-                  <li>
-                    <a href="https://instagram.com/hoopayoficial"><i class="fa fa-instagram instagram"></i></a>
-                  </li>
-                  <li>
-                    <a href="https://facebook.com/hoopayoficial"><i class="fa fa-facebook facebook"></i></a>
-                  </li>
-                  <li>
-                    <a href="https://twitter.com/hoopayoficial"><i class="fa fa-twitter twitter"></i></a>
-                  </li>
-                  <li>
-                    <a href="https://linkedin.com/hoopayoficial"><i class="fa fa-linkedin linkedin"></i></a>
-                  </li>
-                  <li>
-                    <a href="https://youtube.com/hoopayoficial"><i class="fa fa-youtube youtube"></i></a>
-                  </li>
-                </ul>
-              </div>
+
             </div>
           </div>
         </div>
       </div>
-      <div class="copyright-area text-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <p>Copyright &copy; 2021 - Todos os Direitos Reservados.</p>
+      <!--End Header Lower-->
+
+      <!-- Mobile Menu  -->
+      <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn"><span class="icon fa-solid fa-xmark fa-fw"></span></div>
+
+        <nav class="menu-box">
+          <div class="nav-logo"><a href="index.html"><img src="https://dashboard.hoopay.com.br/shared/assets/15.png"
+                alt="" title=""></a></div>
+          <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+        </nav>
+      </div>
+      <!-- End Mobile Menu -->
+
+    </header>
+    <!-- End Main Header -->
+
+    <!-- Slider One -->
+    <section class="slider-one">
+      <div class="main-slider swiper-container">
+        <div class="swiper-wrapper">
+
+          <!-- Slide -->
+          <div class="swiper-slide">
+            <div class="slider-one_icon" style="background-image:url(assets/images/main-slider/icon-1.png)"></div>
+            <div class="slider-one_icon-two" style="background-image:url(assets/images/main-slider/icon-1.png)"></div>
+            <div class="slider-one_pattern" style="background-image:url(assets/images/main-slider/pattern-1.png)"></div>
+            <div class="slider-one_pattern-two" style="background-image:url(assets/images/main-slider/pattern-2.png)">
+            </div>
+            <div class="slider-one_pattern-four" style="background-image:url(assets/images/main-slider/pattern-4.png)">
+            </div>
+
+            <div class="auto-container">
+              <div class="row clearfix">
+                <div class="banner-one_content">
+                  <div class="banner-one_content-inner">
+                    <div class="banner-one_title"><i><img src="assets/images/main-slider/hand.png" alt=""></i>
+                      HooPay torna tudo mais rápido e fácil</div>
+                    <h2 class="banner-one_heading mb-5">CONTE COM OS RECURSOS QUE IRÃO IMPULSIONAR O SEU NEGÓCIO</h2>
+                    <div class="banner-one_text">Diversas ferramentas gratuitas para você operar da maneira mais simples
+                      possível.</div>
+                    <div class="banner-one_newsletter">
+                      <div class="newsletter-box">
+                        <a href="https://dashboard.hoopay.com.br/login.html"
+                          class="template-btn btn-style-one mt-3 mb-3">
+                          <span class="btn-wrap">
+                            <span class="text-one">Comece agora</span>
+                            <span class="text-two">Comece agora</span>
+                          </span>
+                        </a>
+                        <ul class="banner-one_list">
+                          <li><i class="fa-solid fa-check fa-fw"></i>Taxas acessíveis</li>
+                          <li><i class="fa-solid fa-check fa-fw"></i>Recebimento Rápido</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- Content Column -->
+                  <!-- <div class="slider-one_content col-12">
+                    <div class="slider-one_content-inner">
+                      <div class="slider-one_title"><i><img src="assets/images/main-slider/hand.png" alt=""></i> HooPay
+                        torna tudo mais rápido e fácil</div>
+                      <h1 class="slider-one_heading">CONTE COM OS RECURSOS QUE IRÃO IMPULSIONAR O SEU NEGÓCIO
+                      </h1>
+                      <div class="slider-one_text">Diversas Ferramentas gratuitas para você operar da maneira mais
+                        Simples
+                        possível.
+
+                      </div>
+                      <div class="slider-one_button d-flex align-items-center flex-wrap">
+                        <a href="about.html" class="template-btn btn-style-one">
+                          <span class="btn-wrap">
+                            <span class="text-one">Comece agora</span>
+                            <span class="text-two">Comece agora</span>
+                          </span>
+                        </a>
+                        <!-- <div class="slider-one_video">
+                        <a href="https://www.youtube.com/watch?v=kxPCFljwJws" class="lightbox-video play-box"><span
+                            class="fa fa-play"></span></a>
+                      </div> -- >
+                </div>
+              </div>
+            </div> -->
+                  <!-- Image Column -->
+                  <!-- <div class="slider-one_image-column col-lg-5 col-md-12 col-sm-12">
+                  <div class="slider-one_pattern-three"
+                    style="background-image:url(assets/images/main-slider/pattern-3.png)"></div>
+                  <div class="slider-one_image-outer">
+                    <!-- Slider One Author - ->
+                    <div class="slider-one_author">
+                      <i><img src="assets/images/main-slider/icon-2.png" alt=""></i>
+                      <h5 class="slider-one_author-name">Sara Ven</h5>
+                      <div class="slider-one_author-text">Social media manger</div>
+                    </div>
+                    <!-- Slider One Percent - ->
+                    <div class="slider-one_percentage">
+                      <i class="fa-solid fa-arrow-up fa-fw"></i>
+                      <div class="slider-one_percent">100<sub>%</sub></div>
+                      <div class="slider-one_percentage-text">eficiência</div>
+                    </div>
+                    <div class="slider-one_graph">
+                      <div class="slider-one_graph-title">Faturamento Mensal <span>R$ 157.321,10 <sup><i
+                              class="fa-solid fa-caret-up fa-fw"></i>150%</sup></span></div>
+                      <img src="assets/images/main-slider/graph.png" alt="">
+                    </div>
+                    <div class="slider-one_image">
+                      <img src="assets/images/main-slider/image-1.png" alt="">
+                    </div>
+                  </div>
+                </div> -->
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- End Main Slider Section -->
+
+    <!-- Services One -->
+    <section class="services-one">
+      <div class="auto-container">
+        <!-- Sec Title -->
+        <div class="sec-title centered">
+          <div class="sec-title_title">Como Funciona</div>
+          <h2 class="sec-title_heading">Aprimoramento de Funcionalidades
+            <br> <span>para ter escala</span>
+          </h2>
+        </div>
+        <div class="row clearfix">
+
+          <!-- Service Block One -->
+          <div class="service-block_three col-lg-4 col-md-6 col-sm-12">
+            <div class="service-block_three-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+              <div class="service-block_three-dots" style="background-image: url(assets/images/icons/icon-2.png)"></div>
+              <div class="service-block_three-circles"
+                style="background-image: url(assets/images/icons/service-three_circle.png)"></div>
+              <div class="color-layer"></div>
+              <div class="service-block_three-icon">
+                <i class="icon fa-regular fa-credit-card fa-fw"></i>
+              </div>
+              <h5 class="service-block_three-heading"><a href="service-detail.html">Métodos de Pagamento</a></h5>
+              <div class="service-block_three-text">
+                Ofereça ao seu cliente Cartão de Crédito, Boleto e Pix Parcelado
+              </div>
+              <!-- <div class="lower-box d-flex justify-content-between align-items-center flex-wrap">
+                <div class="service-block_three-number">01</div>
+                <a class="service-block_three-join" href="service-detail.html">Join now <i
+                    class="fa-solid fa-plus fa-fw"></i></a>
+              </div> -->
+            </div>
+          </div>
+
+          <!-- Service Block One -->
+          <div class="service-block_three col-lg-4 col-md-6 col-sm-12">
+            <div class="service-block_three-inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+              <div class="service-block_three-dots" style="background-image: url(assets/images/icons/icon-2.png)"></div>
+              <div class="service-block_three-circles"
+                style="background-image: url(assets/images/icons/service-three_circle.png)"></div>
+              <div class="color-layer"></div>
+              <div class="service-block_three-icon">
+                <i class="icon fa-thin fa-percent fa-fw"></i>
+              </div>
+              <h5 class="service-block_three-heading"><a href="service-detail.html">Taxas Acessíveis</a></h5>
+              <div class="service-block_three-text">
+                Quanto Maior o seu Faturamento menor é a sua Taxa!
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Block One -->
+          <div class="service-block_three col-lg-4 col-md-6 col-sm-12">
+            <div class="service-block_three-inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+              <div class="service-block_three-dots" style="background-image: url(assets/images/icons/icon-2.png)"></div>
+              <div class="service-block_three-circles"
+                style="background-image: url(assets/images/icons/service-three_circle.png)"></div>
+              <div class="color-layer"></div>
+              <div class="service-block_three-icon">
+                <i class="icon-users"></i>
+              </div>
+              <h5 class="service-block_three-heading"><a href="service-detail.html">Área de Membros</a></h5>
+              <div class="service-block_three-text">
+                Insira seu Conteúdo Digital Gratuitamente em uma plataforma exclusiva
+              </div>
+            </div>
+          </div>
+
+          <div class="service-block_three col-lg-4 col-md-6 col-sm-12">
+            <div class="service-block_three-inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+              <div class="service-block_three-dots" style="background-image: url(assets/images/icons/icon-2.png)"></div>
+              <div class="service-block_three-circles"
+                style="background-image: url(assets/images/icons/service-three_circle.png)"></div>
+              <div class="color-layer"></div>
+              <div class="service-block_three-icon">
+                <i class="icon fa-solid fa-palette fa-fw"></i>
+              </div>
+              <h5 class="service-block_three-heading"><a href="service-detail.html">Fácil de Customizar</a></h5>
+              <div class="service-block_three-text">
+                Personalize rapidamente o seu Checkout ou sua Loja Virtual
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Block One -->
+          <div class="service-block_three col-lg-4 col-md-6 col-sm-12">
+            <div class="service-block_three-inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+              <div class="service-block_three-dots" style="background-image: url(assets/images/icons/icon-2.png)"></div>
+              <div class="service-block_three-circles"
+                style="background-image: url(assets/images/icons/service-three_circle.png)"></div>
+              <div class="color-layer"></div>
+              <div class="service-block_three-icon">
+                <i class="icon fa-solid fa-chart-line fa-fw"></i>
+              </div>
+              <h5 class="service-block_three-heading"><a href="service-detail.html">Conversão Personalizada</a></h5>
+              <div class="service-block_three-text">
+                Uma equipe especializada que melhora a aprovação de suas vendas
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Block Two -->
+          <div class="service-block_three col-lg-4 col-md-6 col-sm-12">
+            <div class="service-block_three-inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+              <div class="service-block_three-dots" style="background-image: url(assets/images/icons/icon-2.png)"></div>
+              <div class="service-block_three-circles"
+                style="background-image: url(assets/images/icons/service-three_circle.png)"></div>
+              <div class="color-layer"></div>
+              <div class="service-block_three-sideicon" style="background-image:url(assets/images/icons/service-1.png)">
+              </div>
+              <div class="service-block_three-icon">
+                <i class="icon-diagram"></i>
+              </div>
+              <h5 class="service-block_three-heading"><a href="service-detail.html">Diversas Integrações</a></h5>
+              <div class="service-block_three-text">
+                Ferramentas gratuitas para Conversão de Vendas, N.F., Logística e etc.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- End Services One -->
+
+    <!-- About One -->
+    <!-- <section class="about-one">
+    <div class="about-one_pattern" style="background-image:url(assets/images/background/about-pattern.png)"></div>
+    <div class="about-one_icon" style="background-image:url(assets/images/icons/about-1.png)"></div>
+    <div class="about-one_icon-two" style="background-image:url(assets/images/icons/about-2.png)"></div>
+    <div class="auto-container">
+      <div class="row clearfix">
+
+        <!-- Tab Column -- >
+        <div class="about-one_tab-column col-xl-6 col-lg-6 col-md-12 col-sm-12">
+          <div class="about-one_tab-outer">
+            <div class="about-one_tab-shadow" style="background-image:url(assets/images/background/tab-shadow.png)">
+            </div>
+            <div class="about-one_tab-image">
+              <img src="assets/images/resource/tabs.png" alt="">
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Column -- >
+        <div class="about-one_content-column col-xl-6 col-lg-6 col-md-12 col-sm-12">
+          <div class="about-one_content-outer">
+            <!-- Sec Title - ->
+            <div class="sec-title">
+              <div class="sec-title_title">About us</div>
+              <h2 class="sec-title_heading">Crafting of your digital <span>narrative discover</span> our journey</h2>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.
+              <span>Pellentesque sit amet</span> sapien fringilla, mattis ligula consectetur, ultrices mauris.
+              Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing vitae mattis tellus. Nullam quis mattis ligula
+              consectetur.</p>
+            <div class="about-one_options d-flex align-items-center flex-wrap">
+              <a href="about.html" class="template-btn btn-style-one">
+                <span class="btn-wrap">
+                  <span class="text-one">Know more</span>
+                  <span class="text-two">Know more</span>
+                </span>
+              </a>
+              <div class="about-one_rating-box d-flex align-items-center flex-wrap">
+                4.7
+                <div class="about-one_rating">
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <i>Customer rating</i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section> -->
+    <!-- End About One -->
+
+    <!-- Choose One -->
+    <!-- <section class="choose-one">
+    <div class="auto-container">
+      <div class="inner-container">
+        <div class="sec-title light centered">
+          <div class="sec-title_title">why chose us</div>
+          <h2 class="sec-title_heading">Reason to chose our <br> <span>platform</span></h2>
+        </div>
+        <div class="row clearfix">
+
+          <div class="counter-block_one col-lg-4 col-md-6 col-sm-12">
+            <div class="counter-block_one-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+              <div class="counter-block_one-icon fa-brands fa-instagram fa-fw"></div>
+              <div class="counter-block_one-count"><span class="odometer" data-count="8000"></span><i>+</i></div>
+              <div class="counter-block_one-text">More than 8,000 customers have experimented with Kafkai</div>
+            </div>
+          </div>
+
+          <div class="counter-block_one col-lg-4 col-md-6 col-sm-12">
+            <div class="counter-block_one-inner wow fadeInLeft" data-wow-delay="150ms" data-wow-duration="1500ms">
+              <div class="counter-block_one-icon fa-brands fa-instagram fa-fw"></div>
+              <div class="counter-block_one-count"><span class="odometer" data-count="500000"></span><i>+</i></div>
+              <div class="counter-block_one-text">More than 8,000 customers have experimented with Kafkai</div>
+            </div>
+          </div>
+
+          <div class="counter-block_one col-lg-4 col-md-6 col-sm-12">
+            <div class="counter-block_one-inner wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+              <div class="counter-block_one-icon fa-brands fa-instagram fa-fw"></div>
+              <div class="counter-block_one-count"><span class="odometer" data-count="200000"></span><i>+</i></div>
+              <div class="counter-block_one-text">More than 8,000 customers have experimented with Kafkai</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section> -->
+    <!-- End Choose One -->
+
+    <!-- Answer One -->
+    <!-- <section class="answer-one">
+    <div class="auto-container">
+      <div class="row clearfix">
+
+        <div class="answer-one_title-column col-lg-5 col-md-12 col-sm-12">
+          <div class="answer-one_title-outer">
+            <div class="sec-title title-anim">
+              <div class="sec-title_title">AI ANSWERS</div>
+              <h2 class="sec-title_heading">Gain <span>full control</span> of your information docs and many more</h2>
+            </div>
+            <ul class="answer-one_list">
+              <li><i class="fa-solid fa-check fa-fw"></i>Create a personalized knowledge base on your own Braine
+                library</li>
+              <li><i class="fa-solid fa-check fa-fw"></i>Use your trusted sources to find the answers you need</li>
+              <li><i class="fa-solid fa-check fa-fw"></i>Stay in the know with AI Q&A and semantic search</li>
+            </ul>
+            <div class="answer-one_button">
+              <a href="about.html" class="template-btn btn-style-one">
+                <span class="btn-wrap">
+                  <span class="text-one">Know more</span>
+                  <span class="text-two">Know more</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="answer-one_content-column col-lg-7 col-md-12 col-sm-12">
+          <div class="answer-one_content-outer">
+            <div class="answer-one_pattern" style="background-image:url(assets/images/background/faq-shadow.png)">
+            </div>
+            <div class="answer-one_image">
+              <img src="assets/images/resource/faq.png" alt="">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section> -->
+    <!-- End Answer One -->
+
+    <!-- Testimonial One -->
+    <!-- <section class="testimonial-one">
+    <div class="auto-container">
+      <div class="inner-container" style="background-image:url(assets/images/background/testimonial-one_bg.png)">
+        <div class="sec-title centered">
+          <div class="sec-title_title">Testimonials</div>
+          <h2 class="sec-title_heading">What our respectable <br> <span>clients says</span></h2>
+        </div>
+        <div class="three-item_carousel swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-block_one">
+                <div class="testimonial-block_one-inner">
+                  <div class="testimonial-block_one-rating">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                  </div>
+                  <div class="testimonial-block_one-text">Lorem ipsum amet consectetur adipiscing elit Ut et massa mi.
+                    Aliquam in hendrerit <span>Pellentesque sit amet</span> sapien fringilla, mattis ligula
+                    consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.</div>
+                  <div class="testimonial-block_one-author_box">
+                    <div class="testimonial-block_one-author-image">
+                      <img src="assets/images/resource/author-2.png" alt="">
+                    </div>
+                    Larry K. Lund <span>Social Media Manger</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-block_one">
+                <div class="testimonial-block_one-inner">
+                  <div class="testimonial-block_one-rating">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                  </div>
+                  <div class="testimonial-block_one-text">Lorem ipsum amet consectetur adipiscing elit Ut et massa mi.
+                    Aliquam in hendrerit <span>Pellentesque sit amet</span> sapien fringilla, mattis ligula
+                    consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.</div>
+                  <div class="testimonial-block_one-author_box">
+                    <div class="testimonial-block_one-author-image">
+                      <img src="assets/images/resource/author-3.png" alt="">
+                    </div>
+                    Marian R. Vieira <span>Social Media Manger</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-block_one">
+                <div class="testimonial-block_one-inner">
+                  <div class="testimonial-block_one-rating">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                  </div>
+                  <div class="testimonial-block_one-text">Lorem ipsum amet consectetur adipiscing elit Ut et massa mi.
+                    Aliquam in hendrerit <span>Pellentesque sit amet</span> sapien fringilla, mattis ligula
+                    consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue.</div>
+                  <div class="testimonial-block_one-author_box">
+                    <div class="testimonial-block_one-author-image">
+                      <img src="assets/images/resource/author-4.png" alt="">
+                    </div>
+                    Bob E. Wiggins <span>Social Media Manger</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="three-item_carousel-pagination"></div>
+
+        </div>
+      </div>
+    </div>
+  </section> -->
+    <!-- End Testimonial One -->
+
+    <!-- Steps One -->
+    <!-- <section class="steps-one">
+    <div class="steps-one_bg" style="background-image:url(assets/images/background/step-1_bg.png)"></div>
+    <div class="steps-one_icon" style="background-image:url(assets/images/icons/step.png)"></div>
+    <div class="auto-container">
+      <div class="inner-container">
+        <div class="circle-layer"></div>
+        <div class="dots-layer">
+          <span class="dot-one"></span>
+          <span class="dot-two"></span>
+        </div>
+
+        <div class="sec-title">
+          <div class="sec-title_title">How its work</div>
+          <h2 class="sec-title_heading">Braine <span>typically operate</span> in <br> a three steps</h2>
+        </div>
+        <div class="steps-one_button">
+          <a href="about.html" class="template-btn btn-style-two">
+            <span class="btn-wrap">
+              <span class="text-one">Know more</span>
+              <span class="text-two">Know more</span>
+            </span>
+          </a>
+        </div>
+        <div class="row clearfix">
+          <div class="column col-lg-6 col-md-12 col-sm-12">
+            <div class="step-block_one">
+              <div class="step-block_one-inner">
+                <div class="step-block_one-steps">step 01</div>
+                <h5 class="step-block_one-title">Algorithm processing</h5>
+                <div class="step-block_one-text">Lorem ipsum dolor sit ame consectetur adipiscing elit Ut et massa mi.
+                  Aliquam in hendrerit urna..</div>
+                <div class="step-block_one-content">
+                  <div class="image">
+                    <img src="assets/images/resource/step-1.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column col-lg-6 col-md-12 col-sm-12">
+            <div class="step-block_one">
+              <div class="step-block_one-inner">
+                <div class="step-block_one-steps">step 02</div>
+                <h5 class="step-block_one-title">Input & data gathering</h5>
+                <div class="step-block_one-text">Lorem ipsum dolor sit ame consectetur adipiscing elit Ut et massa mi.
+                  Aliquam in hendrerit urna..</div>
+                <div class="step-block_one-content">
+                  <div class="image">
+                    <img src="assets/images/resource/step-2.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-block_one">
+              <div class="step-block_one-inner">
+                <div class="step-block_one-steps">step 03</div>
+                <h5 class="step-block_one-title">Content generation & refinement</h5>
+                <div class="step-block_one-text">Lorem ipsum dolor sit ame consectetur adipiscing elit Ut et massa mi.
+                  Aliquam in hendrerit urna..</div>
+                <div class="step-block_one-content">
+                  <div class="image">
+                    <img src="assets/images/resource/step-3.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+    <!-- End Steps One -->
+
+    <!-- Price One -->
+    <section class="price-one">
+      <div class="price-one_bg" style="background-image:url(assets/images/background/price-bg.png)"></div>
+      <div class="auto-container">
+        <div class="inner-container">
+          <!-- Sec Title -->
+          <div class="sec-title title-anim centered">
+            <div class="sec-title_title">Sem Surpresas</div>
+            <h2 class="sec-title_heading">Nossas <span>Taxas</span> Hoje</h2>
+          </div>
+          <div class="pricing-tabs tabs-box">
+
+            <!--Tab Btns-->
+            <!-- <div class="buttons-outer">
+            <ul class="tab-buttons clearfix">
+              <li data-tab="#prod-monthly" class="tab-btn active-btn">Monthly</li>
+              <li data-tab="#prod-yearly" class="tab-btn">Yearly</li>
+            </ul>
+          </div> -->
+
+            <!--Tabs Container-->
+            <div class="tabs-content">
+
+              <!-- Tab -->
+              <div class="tab active-tab" id="prod-monthly">
+                <div class="content">
+                  <div class="row clearfix">
+                    <div class="price-block_one col-lg-4 col-md-6 col-sm-12"></div>
+
+                    <!-- Price Block One -->
+                    <!-- <div class="price-block_one col-lg-4 col-md-6 col-sm-12">
+                      <div class="price-block_one-inner">
+                        <div class="price-block_one-title">Starter</div>
+                        <div class="price-block_one-subtitle">Up to 2,000 words / mo</div>
+                        <div class="price-block_one-content">
+                          <div class="d-flex justify-content-between align-items-end flex-wrap">
+                            <div class="price-block_one-price"><sup>$</sup>3<sub>/mo</sub></div>
+                            <div class="price-block_one-text">*Get Braine tailored</div>
+                          </div>
+                          <div class="price-block_one-button">
+                            <a class="template-btn price-one_button" href="#">Start 1 month free trail</a>
+                          </div>
+                          <ul class="price-block_one-list">
+                            <li><i class="fa-solid fa-check fa-fw"></i>Up to 10,000 words</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Access to basic tools</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Access to AI copywriting tools</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Email support only</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Advance 700+ tools</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div> -->
+
+                    <!-- Price Block One -->
+                    <div class="price-block_one active col-lg-4 col-md-6 col-sm-12">
+                      <div class="price-block_one-inner">
+                        <div class="price-one_stars" style="background-image:url(assets/images/icons/price-stars.png)">
+                        </div>
+                        <!-- <div class="price-block_one-title">Professional</div>
+                      <div class="price-block_one-subtitle">Up to 10,000 words / mo</div> -->
+                        <div class="price-block_one-content">
+                          <div class="d-flex justify-content-between align-items-end flex-wrap">
+                            <div class="price-block_one-price">4,99<sup>%</sup><sub style="font-size: 15px">+R$
+                                1,00</sub>
+                            </div>
+                            <div class="price-block_one-text"></div>
+                          </div>
+                          <ul class="price-block_one-list">
+                            <li><i class="fa-solid fa-check fa-fw"></i> PIX - na hora</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i> Boleto - 1 dia</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i> Cartão - 14 dias</li>
+                          </ul>
+                          <div class="price-block_one-button">
+                            <a class="template-btn price-one_button" href="#">Começar Agora</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="price-block_one col-lg-4 col-md-6 col-sm-12"></div>
+
+                    <!-- Price Block One -->
+                    <!-- <div class="price-block_one col-lg-4 col-md-6 col-sm-12">
+                      <div class="price-block_one-inner">
+                        <div class="price-block_one-title">Enterprise</div>
+                        <div class="price-block_one-subtitle">Up to 10,000 words / mo</div>
+                        <div class="price-block_one-content">
+                          <div class="d-flex justify-content-between align-items-end flex-wrap">
+                            <div class="price-block_one-price"><sup>$</sup>18<sub>/mo</sub></div>
+                            <div class="price-block_one-text">*Get Braine tailored</div>
+                          </div>
+                          <div class="price-block_one-button">
+                            <a class="template-btn price-one_button" href="#">Start 1 month free trail</a>
+                          </div>
+                          <ul class="price-block_one-list">
+                            <li><i class="fa-solid fa-check fa-fw"></i>Up to 10,000 words</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Access to basic tools</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Access to AI copywriting tools</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Email support only</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Advance 700+ tools</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div> -->
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab -->
+              <!-- <div class="tab" id="prod-yearly">
+                <div class="content">
+                  <div class="row clearfix">
+                    <div class="price-block_one col-lg-4 col-md-6 col-sm-12">
+                      <div class="price-block_one-inner">
+                        <div class="price-block_one-title">Starter</div>
+                        <div class="price-block_one-subtitle">Up to 2,000 words / mo</div>
+                        <div class="price-block_one-content">
+                          <div class="d-flex justify-content-between align-items-end flex-wrap">
+                            <div class="price-block_one-price"><sup>$</sup>3<sub>/mo</sub></div>
+                            <div class="price-block_one-text">*Get Braine tailored</div>
+                          </div>
+                          <div class="price-block_one-button">
+                            <a class="template-btn price-one_button" href="#">Start 1 month free trail</a>
+                          </div>
+                          <ul class="price-block_one-list">
+                            <li><i class="fa-solid fa-check fa-fw"></i>Up to 10,000 words</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Access to basic tools</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Access to AI copywriting tools</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Email support only</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Advance 700+ tools</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="price-block_one active col-lg-4 col-md-6 col-sm-12">
+                      <div class="price-block_one-inner">
+                        <div class="price-one_stars" style="background-image:url(assets/images/icons/price-stars.png)">
+                        </div>
+                        <div class="price-block_one-title">Professional</div>
+                        <div class="price-block_one-subtitle">Up to 10,000 words / mo</div>
+                        <div class="price-block_one-content">
+                          <div class="d-flex justify-content-between align-items-end flex-wrap">
+                            <div class="price-block_one-price"><sup>$</sup>9<sub>/mo</sub></div>
+                            <div class="price-block_one-text">*Get Braine tailored</div>
+                          </div>
+                          <div class="price-block_one-button">
+                            <a class="template-btn price-one_button" href="#">Start 1 month free trail</a>
+                          </div>
+                          <ul class="price-block_one-list">
+                            <li><i class="fa-solid fa-check fa-fw"></i>Up to 10,000 words</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Access to basic tools</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Access to AI copywriting tools</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Email support only</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Advance 700+ tools</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="price-block_one col-lg-4 col-md-6 col-sm-12">
+                      <div class="price-block_one-inner">
+                        <div class="price-block_one-title">Enterprise</div>
+                        <div class="price-block_one-subtitle">Up to 10,000 words / mo</div>
+                        <div class="price-block_one-content">
+                          <div class="d-flex justify-content-between align-items-end flex-wrap">
+                            <div class="price-block_one-price"><sup>$</sup>18<sub>/mo</sub></div>
+                            <div class="price-block_one-text">*Get Braine tailored</div>
+                          </div>
+                          <div class="price-block_one-button">
+                            <a class="template-btn price-one_button" href="#">Start 1 month free trail</a>
+                          </div>
+                          <ul class="price-block_one-list">
+                            <li><i class="fa-solid fa-check fa-fw"></i>Up to 10,000 words</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Access to basic tools</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Access to AI copywriting tools</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Email support only</li>
+                            <li><i class="fa-solid fa-check fa-fw"></i>Advance 700+ tools</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Price One -->
+
+    <!-- Faq One -->
+    <section class="faq-one">
+      <div class="faq-one_bg" style="background-image:url(assets/images/background/faq-bg.png)"></div>
+      <div class="faq-one_icon" style="background-image:url(assets/images/icons/step.png)"></div>
+      <div class="auto-container">
+        <div class="row clearfix">
+
+          <!-- Tab Column -->
+          <div class="faq-one_title-column col-lg-5 col-md-12 col-sm-12">
+            <div class="faq-one_title-outer">
+              <!-- Sec Title -->
+              <div class="sec-title title-anim">
+                <div class="sec-title_title">Tem Dúvida?</div>
+                <h2 class="sec-title_heading">Perguntas e Respostas <span>Frequentes</span></h2>
+                <div class="sec-title_text">Consulte nossa central de ajuda ou entre em contato agora mesmo</div>
+              </div>
+              <div class="faq-one_button">
+                <a href="contact.html" class="template-btn btn-style-one">
+                  <span class="btn-wrap">
+                    <span class="text-one">Central de Ajuda</span>
+                    <span class="text-two">Central de Ajuda</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordian Column -->
+          <div class="faq-one_accordian-column col-lg-7 col-md-12 col-sm-12" id='support'>
+            <div class="faq-one_accordian-outer">
+
+              <!-- Accordion Box -->
+              <ul class="accordion-box_two">
+
+                <!-- Block -->
+                <li class="accordion block">
+                  <div class="acc-btn">
+                    <div class="icon-outer"><span class="icon icon-plus fa-solid fa-plus fa-fw"></span></div> 01. Quanto
+                    custa para usar?
+                  </div>
+                  <div class="acc-content">
+                    <div class="content">
+                      <div class="text">
+                        A HooPay não cobra taxas de adesão e nem mensalidades. Para montar todo o seu
+                        negócio digital, você não paga nada, apenas uma porcentagem por cada venda realizada.
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Block -->
+                <li class="accordion block">
+                  <div class="acc-btn">
+                    <div class="icon-outer"><span class="icon icon-plus fa-solid fa-plus fa-fw"></span></div> 02. Quais
+                    tipos de pagamento aceita?
+                  </div>
+                  <div class="acc-content">
+                    <div class="content">
+                      <div class="text">A HooPay oferece pagamentos com cartão de crédito, boleto, pix e com o próprio
+                        saldo da conta. Você pode ativar recursos como compra com 1 clique, múltiplos cartões e
+                        parcelamento em até 12x.
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Block -->
+                <li class="accordion block">
+                  <div class="acc-btn">
+                    <div class="icon-outer"><span class="icon icon-plus fa-solid fa-plus fa-fw"></span></div> 03. Como
+                    funciona o suporte ao cliente ?
+                  </div>
+                  <div class="acc-content">
+                    <div class="content">
+                      <div class="text">A HooPay é reconhecida pelo excelente atendimento ao cliente. Nosso chat de
+                        suporte humanizado está disponível de segunda a sexta. Também temos a Central de Ajuda e
+                        atendimento através do e-mail ajuda@hoopay.com.br a qualquer momento.
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Block -->
+                <li class="accordion block">
+                  <div class="acc-btn">
+                    <div class="icon-outer"><span class="icon icon-plus fa-solid fa-plus fa-fw"></span></div> 04. Quais
+                    tipos produtos posso vender?
+                  </div>
+                  <div class="acc-content">
+                    <div class="content">
+                      <div class="text">Você pode vender produtos digitais como cursos online, arquivos, vídeos e
+                        e-books.
+                        Também pode vender mentorias, serviços online, eventos e até produtos físicos.
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Faq One -->
+
+    <!-- Social One -->
+    <section class="social-one">
+      <div class="social-one_bg-shadow" style="background-image:url(assets/images/background/social-bg.png)"></div>
+      <div class="auto-container">
+        <!-- Sec Title -->
+        <div class="sec-title centered">
+          <div class="sec-title_title">Integrações</div>
+          <h2 class="sec-title_heading">Oferecemos integração com as principais ferramentas do <span>mercado para
+              potencializar suas vendas</span></h2>
+        </div>
+        <div class="social-one_logo">
+          <span><img src="https://dashboard.hoopay.com.br/shared/assets/02.png" alt="" style="max-width: 100px;"></span>
+        </div>
+        <div class="inner-container">
+          <div class="social-one_bg" style="background-image:url(assets/images/background/social-one_pattern.png)">
+          </div>
+          <div class="social-one_bg-two"
+            style="background-image:url(assets/images/background/social-one_pattern-two.png)"></div>
+
+          <style>
+            .social_icon-box {
+              padding: 40px 70px;
+              margin: initial;
+            }
+          </style>
+          <div class="social-box_one">
+            <div class="animation_mode">
+              <!-- Icon -->
+              <div class="social_icon-box">
+                <a href="#">
+                  <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30">
+                    <title>facebook</title>
+                    <defs>
+                      <image width="30" height="30" id="icon_facebook"
+                        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAAXNSR0IB2cksfwAAAK5QTFRFPFmXO1mYO1mYO1mYO1mXO1mYO1mYO1mYPVqZUWujb4WzhpnAiZvBhZi/fJC6WXKoPlyai53C2+Hs/v7+////oa/NorDO/f3+W3Sp+vv8rLnU+/v95+ry4+fwkqPG09no9vf6e4+6SmagRmKeQV6b3uPu4ubwRWGd3+PuQl+cQ2Cc4OXv3+TuSWWf5eny/v7/Z36v7/H3WnOo2uDsUGujn67N7/L37/H2hJe/O1mYQRtmJgAAADp0Uk5ThPb9/Ln3//7/////////////////////////////////////////////////////////////////6IReJBoAAACUSURBVHic5c/JEsFQEIXhS0KMEbQYE2RArpi14f1fTNupSt9eKDv/6lR9q6NUqWzMslWlKqWcH3Ot3mi22m6HZ6/b6wM14NkfAph5NAaJJ2+azoIgZHlOulhGcZywnBKv1sZjG+I0+YYzrfWWON/R8Aq8h49ckQ9HkU9nkS/XAoeIeCO6+4iPjD2Wy7//hS2ZbYmfLz5bJ66c/XzGAAAAAElFTkSuQmCC" />
+                    </defs>
+                    <style>
+                    </style>
+                    <use id="Background" href="#icon_facebook" x="0" y="0" />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Icon -->
+              <div class="social_icon-box">
+                <a href="#">
+                  <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30">
+                    <title>jpaea8ALew3mZPS4uaIeiDIkG0[2]-svg</title>
+                    <defs>
+                      <image width="128" height="103" id="img1"
+                        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABnCAYAAADIf0rxAAAAAXNSR0IArs4c6QAAIABJREFUeF7tXQdYVMf2n3vv9sKyCyy9FykiICCiotiwl8QniS/6EqNJbOnJS88jL4mpLyYxmmaieSZGscWOFRRButKlg8BSF9he753/N2t5GAu7sBjw7+TD7wvMnZlz5jdzzpxz5gwGHpT/1xzAhgL1EEIcAIB+QFpaGpg8ebJxKIzL2mOAEBIAAAzRGB8fT2IYBq3dh6Xt3VMASCQSDmQy7bKKmmBGQR12tqIeEzPZ9JUPjYmxFdj4YxikMAxovkk+fbi2oUMTHuxCJUSPBFE+LtDWlilzcHBQWErgva6PJrmjo8OhtkVGS7tUj1c0NsJLZRLcx9OBvW7x1DkQAA5JUtqLFU2Zv6cWNOEEDU6L9AGTwoKoMH8Rhul0UhcXF/W9GvegAQBCiNqmb/sjjTMqyD/hWFapU3VLT5C7WBh/ubENq5ZI8YYOGVBp9QSPyRBymDQ2gACQJEV2qrVtDIKgvMUCo7ejCPd2sccUKlUGi6DlP7NogpZlMBwrLJR3JCaGGABAX/11BdF5rLqaEWrrFFvV0Bp8NKdMwGaxF7V1KQS1LZ1kfXsP0dqtAnqSxO15HEcCAwRFQSjT6rr1RkrjJOJTbkIe5eEgxPzdHag2qfxciKdD0fQxQZ1qqSIlMtJHg2GYfrAotCoAEPozi2rsiutbPSSd8lgOi7P0SHaZWNKlcFFrjXSpWoMZtHoACAxAHAMAxwG40wggBBgFAbj2Q2PQgZDDgrYcJingsFonjfJpVeu0v4wP9irFDKB4ydxI+WAyqvcElELIOHY4zcYB44cezS/3srfhrcmubPST9qgFMo0OdKs0GIDQJNTgdRqxOxDam04SAjqTDux5HMhj0dX+znYtk6P8pRiE2z3F/Gy+iChPGDVKbU3RYRUAQAgZB9PKPCpa2yc0dcgfy6to9JD0qHwlUhlhxCCgrnPvTkwwF96IqUhZgBhAwtRRyKdcRfx2Dzub3BAvx3McJnYg2sW/cfJkb625TVpSLzW1jnW6tsjTYCDmFde3TWrpUoyR9KjsOmVKgsIAMO15qAyYzqvN0CAEBIYBDweh0d3ephYAuH9eTEhhuJ9zrpuNb6O/P6azZPy3qzsgACDl7Xh6uWNunSQxo6RuboNUHt0olQk0eiMg0c48UEb0RR1aPQAANp1O2fPYGjehTWGYj/jgksnhh+Ii/CoxDLOKMpmamkqr07ADjmaUzW2QKue39CgjOpVqto4kMdMIBsTFvogEpl2QhuMAx4Au2MVB4+dqlz8zOuBITJDXjpHe4g4Mw26sMTNau6lKv4eOtvv0i7Xxu9NLvtmVVujZo9czDZDC/0qBTAcAcOgMzdgA14YZUQEfB/Jdds6e7T+gVZJd3mSXU1K7Yte54hUXG9rcdQYj29hvrlk6PbfWR10zAAYdeBztypljrkwJ91kbF+GThmEY2Z/WLSYFTfz2EzkepTXSNSl5l5eWNHU4kcQ9WAUWUIdQaMdidvwtbuRBPaV9/6WX/94SYqEi1djYyD5f1hmRVlT9ypmiugXV7d04RHQOlQIBIIwUCPdxbl44LniHtwP/6+qcFElSUpJFu4FFFEEIabtTS2bsOntxzfnShgkdKo2NqTeLWrlHHIQA2DCZ0MuOf2ZxXOhv3mL+3qWzx8rN6f375JOCViX4e35189snC6ucNBSFD7o4M2dgt6mDLAmuNlxFgLNo1zNzY3ckTg1Lt0T0mT11aOX/dCTn4T3nStZnVTb5ynQ67IbS08/BD/pnEAAmjsMRYlFDsLv9egd7+/9ufG72XUVCUnIyo/CSfGmFpOfdyrYuDyM2JOF9ixzn0GjaycHeNStmR769MC70kLkiwSwAICWoRErM3Xbi0qZLV1pdSJPNbvgUAgLoJuC1h3o4vHHok5Xb7nSMQmf6+Oc2P1rZ0vV1u0pth0x1w4dKAAgKwnH+7g3LZ41+1Zut+cMci2qfBCaXljLKc5pmHM6+vP5ifWuIER9eTLk+gUgvcOJxugKchM/Mj4s48lLiOE3vyU36/hDnaEH1gqYu1TetSrUIHeuGY6FBAMcFuJf/LW7k605BouOJISF3NSLdlUy0Io5eqJixYV/6+syKK+FqkhymbLk6lTgFgbdIIJkdHfDOqoQJySEhYiX6/fnLHfzNu04sPVda/45EoXRG9ujhXLg0AsaHeJeuWzD+tZkxAcfuZji6K6Wbf0sXplbV7065VD1ZoTPgQ18a9j1tNABglJdz/cLYkNdfWzp57+7dAOR1HX7oeG7Vp6WSTq/hIPP7pPKaArwwekTa2mlhi2NigqR3+uaOAJDL5Xaf7srY+NXBC48ojMb7YvKvM4GN41Ssr+uuJVP8X1SpANh26tKG4hZpIolhyMB4fxQEAhqN+ujJhP8uih2/zskJU92OsNsCoLS0lFHQqFn9/q9nPqySdnPhMN8SbyEcAuBmy6cWxwZ90ClXg1NFta+3KFSMoXrU6y8ikS/FV2jTsXRK5BNzI6afjIrCkPPslhPELe1/vyczMDmzePO5y1fiDf+zcPd3HEPzOwoCf0e7duRMrGrvEt9vk3+d6RycoGaG+515aHzwumWzoiv6BEBycjLx2yXFYzlVkq9aVBrboTl71hkVkmvQ9N/9W9AW72lr0zMtzOeVx8Y4/PLno+EtIuDl7w/ZZxfX/55T1zZNDy2yKlrGRcR1CAGTAsBIUQYGk0HSaATU6PQ4jaSYBgIHpjPH8FbITdEKBASAbqSAgcB0HBaTIkkjTmoNDIjjmB7Rh1zjg0gnE8PA5CCvtInBrolvPjm7o/dE3dQtOvZ9vOPM498fzf2mvkvGHaxtEVnn7PkcpbedoGbh+JEFBEEd230q9yIaWISfh2B0iM+K5LRCj2pJV2ibUuWuMhj/UieTZci+WhsxlkOjUXZcVnOAs33x8pnRdVnFNT/lV9TKA9xcOIsTIudmlzaFpF2sDGnqVvg2y5Q8HTVI1gdoOv6q1s2Pfe6lxIlbex8LbwJAQ0+P8O1Nxw7szCwZb7gap2f1wiEIKsrHpWRSqOf2R6dGnQr2cihGDs/eg0JiiOMcaJNX2RRd26F86URBZWy7Qs2nhoFZ1jT5EEJHPlcRH+qb5S7i/WfSKM9cdctleWJi4g2P3bU4SKyqviM0+WxRwpmimkezq5vCVMbBsbPSMYx6bELouVfnh84I6WUcugkARTWSx5Z9tOvHouZ29mBo/iyAgVmjA0qnjfZ5ZXaEW5q3990DN9COlHKp3vPDn48uuiyR/lOq0YqHg7y2YdA6/B3tPn3t4fi9ixNG1fcVwVNXV8dKr+wadzCj/OtDueUhusGIFYUA+NkLZBvWzZo1L2bUhesr+wYAIITsF77ct/7n1KIXFAaD1WUS2sPHers0fPZUwsJx4f6FfTGl99ZT1tjuv2HX+e9+SyuIVyPP3BAubIKgFsaEnF0zN3pVXLhvpblDRWA/e6ky6t2tp5LPVzZ5UUgvsGaBAIjoDLhm7piv180f/ZaTk5PJLnCjl1O5lT7bThQc+y31YgBkWNkeAgHwFPK1a+bHvvvao/GfWUoXYs63BzImfHskb0dxY5ubSWkaigVC4OcgvPLElLBlbz8x41x/hvjJjjOvfnc4+9913Qq0YVq1YHoSPDE9smrVzDEzYsK86m4AICkpCReHTp3y2Z7zv9R1y12szWA6hsFx/m55M8MCE99YPrm+P1S1t7fzPtyZuXHL8bzHVXCQlKX+DKzXNxyAgyVxob98tGLyOrH4qp/B0vL5b6c9j+fXJJ+93BCtt7YNhoIgyMlO8urDscuuFJxMQ8EjJowlJ0OiSnv6n1/vPf9um0HPsnTQd62PvHB8Lvm3ccHfTgwLeCNxcki/GIP6+GLHmZDP9meeaVGpxVYdo5Ua8xbwdb+/+chTY0N9tve3yeOFrdzDqRc+3p1ZtrpVoSKsvQs4MVmafz0xI2nV/DFfoMAREwDik5Jo0jreO5XSntd0FMXs7+Bv9x3qwIXPk8wa7fNsgjd+oLcmbGk/EELO2g37L3+bkuMOaUNLFcCMFFg9c0zjG4ujR7i7u9/karaETnQ6WPHxzgXHL9V9I1EoXayt9LJxQhft4/QxLur4IC0p6SoAcoqr3V/dcurrjOrGecar15esVpC1bZyP8+UXH41bvmhCWNZAGkYhaSs+2bn59/NlT2mofsVADqT7u37LxgmwZELwjz+99ugaS0Kybtfo3tTCsV/sSd96oa4lkLKynZIOMHJykOeh/6ye81yon2ujCQBbj+SF/vdU/s/nKxujDFa2/hEAwHB3x2PrV8xZNWOMX+NAZ+DZL/c+sz+rcnOTTDF0PJTIuSTgUw+NDViz8YVF3w+UxuM5xe6v/3jq+6Lmjpmklc9jDAwDM0b55q2aF/vknHFBxSYAzHvth5DiJunWK93KaGsjjkXg1JQgr59nxk9a99wAQ7TRWHecyH/mo51nNxW3dBCDZam0eAIhBKHODuQbj05a+/eEyAED4NmvjzILq+s2Zde2LNdZ+dhLwzAQ4mSXMy3Mbfl/nkssQ0YrbOK6TRGFzZ1b5Hp9hMXE9/EB8kmvnhu7dd2skc8ORDZe7ya1oHLVqz8c/yavQTKkABDt5WL8+KmZz00d7f/tQHm4NTWVdT5b+sWujMKnlSRpVZGMwhzFbFaer73N8szvni9BAKD/eDT/2U1/nP+wsKmNZe1VJaAR5GuPTtmyLM7vRWsA4FR+1dI3fj6+Mbe22dbaY+33xEEAQl0dmpOWTl62KD48td/tXPsQ3Un47njp1xsPZi6XG41WBQDqwsPWRrJ4/MhnP18z5w8TAL4/lPv8twcy1hdK2unWZqqQoJEfrJi9ZX6kq1UAsGrDfq9DWeV7JAplpLU15P5OHJKjzjxOlpeIuSDzu1fb+9vO9e8QAP57tmrDp8mpK2VG6+4AyAMb4eaoX7do4ptPzoj4etABIKLRyE+fmbdlxignqwBg6vNfOl5uVR2QKNQxQ8WTjwDgZsPNCXDkzj/91Qtt1gDAzsz6DR/+dnJlj7V3AAhBmKvYsHr++DefmRf91T0BwMdPz9syK+z+BoArn5c9womzwFoAOJjb+MXbvxxf2W0w0AYKqJu+RwBwERtWL+gFgB+P5D6/+Y+M9ZearS8CbAmCfGdpwpbEcV5W2QFe3LDXZ3d2xb5muTJs6IgADDiwWVnBjqKH0javbR3ohCER8HtG7Yb1O04Pzg5gAkDsm8/MizHtALQfDmc/s/lg1qeFTW0ca+sAAhqNfOPRyVses5ISmJJzOfHtrSd+zKtvsbH2WPs9cRCAka72ze88OmXZI9MGrgRCCFkf/Jr65ee701bKrC4CAHC15TUsmTTy+TEi7WHTMXDeW1sjsiqbt0jVmghrryobgkatmhOz9dk5o6xzDMyrXPXqTykb8+pbaEMHABCM8XE1frZy5tpJEX4/9BtI1z5Ex8ALedIvdpwbhGMgAIDPoOe68hlPlm9/q8RkCFqe9Gtwek3z1lqpfIy1DUEcHCdnjQ74YdLY2BetYQj65VjuM5/tTt9UMtQMQS4O5PqVM9bNiw35bqAAeCJpK6uiXflNQUPbch20bvwDyjgS4CDKGRvguHzrm0vLTAD49WRe6E9H834+X9EYZbCy7ZnAMMpPZPP72hmha55bOtus69l3Y+Dj639bcbKw/geJXDWkTMHeIgGVOCFw3SerFwzYEHTo9CXX1389/V15m3QONQim4Ckh3nlLp4c/uXR61FVTcHF1s/vTG/Z/lVMnmU8CU/odqxUcAhjl6Zj33hMzVs4aG1g0kIZRLqJ/fLhjc/KFcquvjIGMC33Lo9Hg2jnRWz9+eu7qgSar2p6SH/fD4eytmbXNvqZUO1YsdAwjJ47wPPjR8jnPjwm95gxCd+L/ONH8bnmr9JXBcAf7igR1E0I8ntz2xpK0gdCC8gy+vCW1bGdGsSckhp47+JWHJlx5ccHooIHk+UNK+es/HE3cea7o8yvdCmfrTj8AHILQjQtw/2xCjO37SYmJpqh0gKJw64wOr3+x+9zbbTqddQNCUDwAj2tYGj/q84Xzwt8fNwBf+UfbU/0+3XeuoFun4w8ESIPyLQVBgL1Q8vWaOZNmjgup7m8fxwsLucfTGz7amV68djDEnBOLqX1zydT3naDkExSbYQIAOgls+D114pcHs3dckcldrK1dswkChHmI98b6Oj694aXErv4w53JHB//nPTlbNh26kKj6X+K5/jQ1aN8ICBp8buH4r/79ZMLL/c3c9d/jhd7bT2XvSC2tjzFaWf4jM7CnSNC8dvroR159fHomCsy9EXZ47EK51/bTF1N+TyscYe2gUBTl7C2y6Vo6edQT762YdcRS5iCAJp8qSPh4T8a2iw0tTtaOWbQWIlDks7+DKP+bNbNemBYTnGFJ5PP1MWzal/nKhv3pH1R3ypjWDgcDBhI8NimsYunUiJmzYoNMsZm9w8KZT36084O9WZdfkRtvuUQ6YB6h9CXL4iMq3loS9zd/T+dSSxrcmlrH2rb/2IfZNZJntZBC2eCGbBHQafrF40I2rpoa925UlPk5fxHIL9a0znz3p2NbUi5VuwxGKjoBQQOPTxn1+VcvLHobw64mmbwp8Di3onntY//e/mVll8z6RhYIABIF00M9vhwd4Pfev56IR6ld+7x8mJycyT7TIHnqxMWq9+t6FDbWVoqsjSTE0FEuDrLHpka8N8HT97tx4/qOD0RxgInv/WRLw1h/7MkoiTMMRrwjhGCko53u8MdPr/Nystlyne6bAIBs0Cs2HDlwqvzK9EEJvIYACBgM7cRgj31zY4O/DeBrsu6UyAgxZdeJouAtKRmzmqXK1yo7euyGS4IadBk0zF3c7uskXP/60uknRvs7V9wJ7EUNDcKLpe1Tf0zJXXSptuUhJUlaf+u/mlwSPDwmMOWjxyc81PtG1i2XQ9/6/si63zNKv6zr7BmU3HhIHxCymZQ9j1U8LTwwjzRqT4d6OdZHB7kb3J3sQF5pHVZY1+neJlNNyCmvj6to7Rqh1Bv5w2Xyr68sFM8tYNDlYV7O5eNGemfYsLGMIFf7Rm93R0inA3Aqq5KeWVLnxuHzEvOrmuOq2nrslQa9VW0wN3Y3CICYy5YtHhe4atNLi3f1zrB+y92TnSkFYf9Nvfj7yaKaIIOVb6b03m5R03ycgBiNJne14ep4HBZF4DjQ6PRYp0LFlGm0PDVJ0oZW7K/lAgMBgU+jGW1YTCWfzdTzuSyT2FOotXhjt5xBGUmBkiIxa5+8eo+UgeEgzt81Ny7Ud2HSigTJn+fhJqpQ7P2/t57897cpOWtalWq25SQPny+u43uo6xUD5aibDU+7evaYTcuXTX3XBcNueozidmsc25taGLPpUNbXZyuuRJKDdE18oEQN+HukFLk4GFEGh5LmTtpQPVoOlE4ahlEjXeyPx/qI1337xmO1f27vtps8Mkd+kXx2zZf7Mtc3yhTc+5E59kymbmVC1Ha0H393NGuZHClf91tBiSGEtqpnF8S8M2+062Z//1szp99RyufV1Ag+/jn988MFVSu1g3Ff/S9kNtK05kcGlk0L9VugAzpwMr/2wImimuDhpmj2xUIWhYH50f5b/vnE/FeifEWy29W/q5rX3NEz+vmNB/cczKvw1lvZK9XX4Afr7yhvcJBY2LhwUsjL7y+ftR/1889vjzy870LZF7WdPa5wmGQh6Ys/TAjAotiRtV+tnv2Ig4Nt3p3q3xUA6Nq4Q+i0ST+m5G4olXSONFj53mBfRFj975Tp/r56XnTA54Hebp88My/KpBDNS/qew8d5b6VfbnyxsUvGHu4ij4FhZIiLfcnKmdEvrl004a73FPo86CUlpdKyNVXTSxulnzR1K0YOlzw9t4CHgih2Hzy/KC55YYz/uyO8XdCTMqYDADLDFlS1BO4/X/rBlqNZD7cq1Vczdw3DglMQOvO5hVF+jm9FJPidSOrjDUazqETXxwmZOL6qVbatsVvmanoJazgVCgJXGx715pL4lKhAz3+MCXTt+rOjBoGgrKlJeCS9estXf2QuaJYrTY/0DKeCURRwFwqa/Z0ET5CC9jR0/buv8ZtNIRIHlzQuM6rbFRur2rt8deg5N7O/7msYg/d3jILQw06gXDkj+uScMf7Pjg70uMkQ8uee88rqnQ9kV36x7UT+3KZuORcOh/T46GEMgAF/R2FNfKDz2m9ef+y4uRy1dAqx97emzDhf2vRxTk1TSI9WRxuMbGLmDv6u9SAELBoNjHAQNo8L8fhi+YLY3dG+Lk19uWjRTpBbI3Hbsv/Co3kVjS+UtXW5aI3IM28pq6xCRZ+NoHzANmymIcrbuSw+1PP1d5bPRJNvtm3LYqpSIaSV7cuMOF9atyqvpnVJVUsnGwyG96pP0u9SgYLAnsOBYwNcTiZEBWybFTZhn6Vv7FVVVTHTKrsePpBe8kR2pWR6h1qNDTmRYKRAgIuDJsrPeWeon/jb1x+ZetHS5BQWA+Aa27Ffj2bxG3t0UVkltT+nlzR4dOl0GHoR9C8tKCUrRYGRni7dS6eM2hvq5vSvHklRW3/T0iRDSNikl4sLm1rf3nO2ZElhvUSov9trp/eKeBICEZMJp432a4kIcF/m7sPMWzp2LHpX2eyVf32oA5oxtF2W1LWHHskoe/JIdtmiMonUUaU30HVG49WnYe9FMb2uiQMmjdAjj9eMSP+MhEj/T0Z7jbrk7Y1Z5QXRujrIKqgvCj+RX/XakdyK8T1avUBrNDKMFAravnd0MgkCcBh0w0hXcdtDcSP3zo4K+XmEt7C4L7F2t2mwyujz8iAdcpvGH8ooS8yuaPRrkcoiGqQyodpAEgYTk6zwnOp1Kq4e3EyTjkNgcLez0fMY9BJvR2HesoTIU5SYONrXOzn9xSV6P4kuJWfvP1cyvbSxI7JbpR0p6VFwDRQEpCm1jhWTPl97JpeO4YBDJ0g3Oxu5HY9dMC7Yq2ruhJBkltbz/O3y/1tKm1UAcL3Tmq4uwaWL9bYXGzpCO7vkcbWt3aEUxCZekcrZDe1duF5nAEhfgBhueljZ7EJBgLJwAYoCzg4i6CriaTgMWoUdn3OCxyKyXe1FFRG+4uayjMMKSx9ONHsM1yqiQJW0S/U26YUVrj0qMprDwBenFtaINQYquLVbyW7p7MbQo9imLGZodzCXw+hQhRaLkQI0AgduDkLoaMtV2bAZ6T5OwmKhDTtDzOcWzZ8R1u0jFKJoKou3+9vRatbw0JuBnWrgqGwHXeZsq0g05Ofn08qkdEaQhyj6QHohTcDnTgMYtjCjpI5f3yqzVWn0bL3RaHogXGckbyKGwDFAR/+gMDIG3chkEF0TQ30MkUFuyqzC6jenRY1oNSh1NQpXWtczUZFIRbcKMywFQxKEePCFC0yagsvXAcov7VKF05SY4A9KqiWM8yV1DKlC56TVGwitzoCTFAUM1LVlfa0jAscwOo4DGkFAJoOmdxSwO+PDfTXeLvaX27tk20cHeTQVFNcUTg6200dGRhr7mnQIIa+rS2MrErGb+6prkQ6gVCodT19q/E92SS0JcHwHwPSXwsf5dVuy1SIP44miIqZBjjECPJ1n4gTu2tDWzWpt65FLpD3cLpUa02kRjTgUCzmkh4sD6eEowh2FXHVtXec+qNLJwsIcgaOjo1WfT7d00u9WHwG/ra2NU9jWBmiQZevv4rRQqdHQq69IWR0ymbZbrmFJOmSmqB8GjQbsBBwqwNuJ9Ha0A2wWUVdR13pKbZQaYv38SDc3N21fk4gW5g+HDzOlMrYXm06fnHW5YfrLj0xlOnNdHnZ3x8zKVWjWDtCuVDp99uu5H35JyZlDZ9C7vRwFGd4OorOLxgeXTAwPKLOz4zRZk5EP2ro7B1Bi7xPZl4P3nysOrWnrCepWqxPautQjZFod+63EiUn//PuUD809DpoNgC9+PffjpkOZc5SQwhgETvGZDLW7kC8N9nYpnxDoti/Q0zE1frRvnblPlj6YZMs4UFoKGTir2etkQd3YquaumZnl9cGSboWbUm+0Ven0OFK1uXQaCBIL5uRtefmoua1bDABFr0TNGISADjFoz+Pow/2c26dH+Bz/+4yolM5m3qHgYGDoawszd5D/X+sh8/vTTz/NUhmZcbtT85cU1LbNSC+tF8hVWpYWwJvfboYAIAAE2HNmX/z59WPm8mxAAOjdCVLDuABAJ5FAOycmsNZFxEvBMNqZ0QHOl505tu2lpWma/hpkzCVmONdD+gMAgHhvWxqNySBdmHRaWGltaziPw33qRN5lm4bOHo4GUhi801HzrwbADeZDaIpBdxDwKFsuq2uUh7hGwGWfd7KzyQx2t7s8bXSQUihkNT7YHa5yDB0r8xs6HfMLKwK1BizilxN5Ii6DmNah0Ph1qrS2XXIVgYxqfRrWhgwAriPhmrMQvRWAnBVMGtHpbifodBLx22MD3bJjgr1KacBwNsTbUS0UCnuG8+q1ZOxopVdXV/N/O1XMmjMpavH243n+udUtI5Ravb9aq3NuUajoOgNJQzL9fzc3zegBotQvDNLPjjXvLxEBZgwRPaYEUMQVB4GCxdTHBHnKo4PcGnGK/HluXGA106hLu13gojltD/U66F0gI52z+Jt9GU5qHbWgoqlzRGm1xFYDSUID4VVDhlkC+Q6UoltXLIbBR8haMGQBcMvQSWhKRyLkcSgmhslteazWmWMCKY1Wf7KxvTt9ymh/TKbUSNRK5ZU5k8Mwf1cRdv7UqeahqEs0ymQircLI2XYgHStramePHuHrVdrQwqUT+FihDWfW6fwqnkZPuki1OoZccy3M1pr+kmEJgF7iAtn3UewFuldH4LjRjs8xuohsgEqnb2LiWJ2fsx0QCjh4YZXkWNQId3W4vysI8hIbUnKLz8paND0PJ4TBoBEuOIZhGMNg0Nna2sqsoWegVLrtKpUIDZVNccmfDhynX+mQ47PHh4dTGO5aWCshsksbCCYND6ePy3pUAAAHi0lEQVQRmFtFcyfR3KPk2nJYI1Q6A0/So6BRRgpHj8Ehq+eAVvldrVCDuAO0tSkdP91z9rvvj2XNV1KD867dLbRdc/qg7NYoxTmBRCKOARpOaAVMOuQz6ZDLYlDtKm2Vkw1H5WpviyxrgM9lA41W15JaUFVgL2Drgt3tSV8nOyOHxTBdyeKxmXQul3vDEwEpCtOTBihXqA0UdfWxBKVajze0d9MKaiQ4oNEEUyP8p2gNJC7tUQOpTIFf6ejGcQx3wyEUqg1GTKbRY0qDgUGSFEECiJEQgqtWXwt8AQOVYYO5A1S3KsTf7Dmzacux3IeVVk5bNlC6Td8jVwJi+HVTO44BnEYA5EljEASkAwwQ13KK4SgrBn6r74AiqRuvk1IUBOjKkJ4iMR1JAspw7YYihq7wYVefcrLm9m0NJpgAwDT4CJnW1wGGPADuxMCbXESW+IuuaWMDUcqsMamWtIHeBWSzDJ62jAcAsIRv901ddO2exTR4PdgB7psptYwQCK+JgEE4BiIRsHH36c0/peQ9NCR1AMtYdX/WhhCIeVzoyqfNsbodAAHgy51nftx2Mnce8gbenxwc5lRdA4CviDP7wvcvpZhLjVmTiQCw4ffULb+cypn7AADmsvYe14MQOPC4xjE+dnOPfLLauhdDHgDgHk9mf7pDOwCfq4nzEz+0d/3T1gVAa6tC/N7vp7dsP5k3VwkeiID+zM+gf3MVAGScn3iO1QHQJJfb7Txa+M4vR7Mer+mWCzQkifw6g2fWHHRu3UcdINM5BqCQwdQHuNlXJYR5P5X01Gyzn+g1SwdAAZ1nLpa7XqzsnF5Q3fS3KklXZE1Ll123RoP16ae+j3g95EgxksDJ1sbgIeKXBbiKTvg5C/ZMC/QvnzAhEN0SMquYBYDrLaEo1FP5Za5VDd3heTXNEyubuh4rqm1xkhv0yINjVocPKg2QAxAAGoDAlsWGMyL9u5yFnK88HG0Pc+lE9ZPzxystdYBZBIDeQ09NTaVJAd+vqVO1+lhO5d+zK5v5Cr2OQYHeKagHSOyDz69y4FpwDQEAJWSz9FE+zhcXThiZGjPC/ZewQNdqc1Lu3omV/QaAaVwQYvX19cz8eqlXYXXHxNzK5sQmqTy4Q6FylKo0mNXTnf9/AgSadAwAFFEl4rLVthxWrbOAl7d6QUyWkw3zUFxkUKulq/127BsQAHo3iG7Seldd8cwqahp3ubE97vKV9rGFV1q9VDoDX6s3YqYXPqzW232MBHTZlQJAwGYCJ5GNVMRlZnk7CS+E+bmmQ502/5VlCejCiNUSqFp9SvLy8ujdQMjJulgtIhlEZGNb1z/q23riC6olLLleT0d+8geK458ADCG66ApYBAGFPI5+jJ9L8whPcZqnk+3+LqU6l03jyF9cHKsbyFY/KCLAnHVYWtooqumSBje2K+Ydza6Ib+5WBlU1d7C1FEVQyDlvTiP3YR3TykMvREIMCvlcnaeDoDlulHdJuLfjH95iu7N00qvZGrd/+2Kd1XeAO3WIThBNTVKnsxUNEZlF9fEl9W1RPUqtZ21nD5tOEGK5VouZrogOtUCLvjho7t/RDWcMAzZMJmQzCLUtmylV643FD8UEyz1dRecj/Nwy48O9ygEAemvIdnOHdc8A0OsoiV1oamJJaxVujd0yz+0nch08He0ndyvVMZIuuUddRzeXJCFdT1IAPWJpir65V0kYzOVaX/WuXfXGMBywaQRg0mkGL7GtSshn1xAA5AW6ihsdbDkXW9Q9Bf9ImKrm61u1ISEh+r6aHYy/33MA9CYCnSJ27wY4EObzcILmdjSnTOjpbJ9wpaU7vL6tJ0SrN3qUt3QR3QrlVYNT791hKIDiWtzidZrQXXf0I7bhQz9nEcliEA0jvcQ57g6iyna57FSwm0d7aWtDy8Kg0cbY2L5v/w7GhP+5zb8UALcjEN2UQYKgU6HwzbrU6Lb3fCF/lJ/r6pzyRn5etcSNRkGhTGfA5Do9HUKKhuqTEEAjUi7RpYPrSgXWj4Q5vQZ0gzG9lBR0QQe9pYMDlOMCo+g4oRNxmBSB4TqChrdMDPVWRQd5astrmzcvmhTa4e/lduXsCWb94sUADoYCZw2ADDkA/Jmoa3fmGBs3HgMT54aGkSTw33WygKbUkCP5XLZ/h0zJrJFIKZVG58hh0T11eiOh0Rtwjc4IdBQFNEYjptEbMC1JAohSqjGYvJv7gEBPkQYtSepQWDqLRgccBgHZBA1yGDS0fUMWk07pDVSn1mis8RILoYdYQOE41lle35LxcFyoLtzfXSqRSLIWz4hVXvOQ3FM5PhAgDHkA3Im49nbIU4EOXkd9Bzh6uYnythe5ujiJfLp61MSV9k68XtINOnrkWIdMjUmkCkyq1kBbDpOzdErUAqR+G1EMOAUBnSBAfUvX5YM5pcUEjaDEfDbmLrKFYiGP8nURAUcHIXC141OkgWrfm3mpYoq/pzEm2p3gCYW6rV8KZElJfT98NZAJGuxvhy0A7iA+bqLH9D+9fpMMAR7bJBegX8vB1XesbYANIAiV1tnZWdNbrbg5mcvV3u6ldj7YE39Db7lXHT3oZ2hy4P8A9XoaflfPiVgAAAAASUVORK5CYII=" />
+                    </defs>
+                    <style>
+                    </style>
+                    <use id="Layer" href="#img1" transform="matrix(.234,0,0,.233,0,3)" />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Icon -->
+              <div class="social_icon-box">
+                <a href="#">
+                  <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30">
+                    <title>tiktok</title>
+                    <defs>
+                      <image width="30" height="30" id="icon_tiktok"
+                        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAAXNSR0IB2cksfwAAAe9QTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAAAF5yWI7+4JL+4FVJPBAEBAAAAAAAAHMW9vvv46P385q25ZBIiAAAA0Pz6//////L1nTlN8cLLIQ8S3OHhJm5rCT077f79oNnYYhUkAgABAQMD/9Pb//b4/+Hn2SpMAwEBBBkYE4N+HMC4Jc7GGEFA/3+YskZb7am2/+brDFRRId/WZPXuvPv45v38622GOQoT/3+XahMkGwUJcxwtqClCnR02CkhFJPDmnPn0/v///3CLQAwVAQgIHszDgffx//X3/5is/3WQ/0hrCUA9OPHo9P7+//3+/2qG2SdJXxEgOgsUEwMGEXl0dfbw/9Lb7StQIgYMEn14k/jz/8rUtiE+Hs/G/3uUC0xJkPfy//r7vUthBzIwI+/l4P37//7+/159YRIhAg0NZ9vV9OPmPVhXBiwqDVlVIN3Uc/bw/+Xq/ThdOAoTF2Fd5/389v7+pfn1g/fxrvr2/P////v8/3CMyiREBwECAAICT3d2+ff4/4mf7ixRMwkRYD1E7LnD/+fr/+/y/7zJ/1Jz4ChMQAwWHQUKdx0uxTJO2C5PvyNBZxMjEwQHAAAAAQAAAAAAAAAAAAAAAAAAVJC6mwAAAKV0Uk5TAAdyzOjrcSPF/wjHyAl4e9H/0///////7e7///////H/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////0P8kds/qL0nWwwAAAVZJREFUeJxjYGBgZGJmYcUALMxsjAxAwM7BiQNwsDMwcHHjkuXk5OFl4MMty8nJzyCAKiAoKIjEE2JgRZUWFhEVE4fzJBgkUaWlpGVk5eA8eQxpBUUlZbzSiiqqeKUV1dQ1BPFIK2pqaetgSAvqgqX19BUVDQyN0KSNTUzNzHWA0haWVtZ66NI2tnb2Do5OQGlnF1c3dw9Uwz29vH0UFX39wNIYHvMPCFQMCg4JxSEdFh4RGRUdExuHXTo+QTExKRniMSzSKamKaekgRoaCYiamdFa2Yk4ukM7LLygsKsaQLilVVCwrr6isqlasqa3DkOasb1BUbGxqbmlta+/oxJTu6u4BBbZiUG9fPyemNCfnhImTJltPmTptOieyNCIxzZg5a/acufOQZIGJaT4Sb4H4Ak4UIEQoIXPx4JYFZgOGhTizCfdCUCbjWrR4iQQGWLJ4ERcDAwAE/l1rKyNckwAAAABJRU5ErkJggg==" />
+                    </defs>
+                    <style>
+                    </style>
+                    <use id="Background" href="#icon_tiktok" x="0" y="0" />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Icon -->
+              <div class="social_icon-box" style="padding: 30px 70px; margin: initial;">
+                <a href="#">
+                  <i class="fa-solid fa-plug" style="font-size: 2rem;"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-box">
+            <div class="animation_mode_two">
+              <!-- Icon -->
+              <div class="social_icon-box">
+                <a href="#">
+                  <img src="assets/images/icons/nfce-1.png" alt="">
+                </a>
+              </div>
+
+              <!-- Icon -->
+              <div class="social_icon-box">
+                <a href="#">
+                  <img src="assets/images/icons/social-16.png" alt="">
+                </a>
+              </div>
+
+              <!-- Icon -->
+              <div class="social_icon-box">
+                <a href="#">
+                  <img src="assets/images/icons/social-17.png" alt="">
+                </a>
+              </div>
+
+              <!-- Icon -->
+              <div class="social_icon-box">
+                <a href="#">
+                  <img src="assets/images/icons/social-18.png" alt="">
+                </a>
+              </div>
+
+              <!-- Icon -->
+              <div class="social_icon-box">
+                <a href="#">
+                  <svg fill="none" height="30" viewBox="20 20 52 52" width="30" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd"
+                      d="m36.0241 61.7074c-.6546-.0285-2.3006-.3167-3.9684-.7551-1.6549-.4274-2.7855-.9981-2.7855-.9981-.622-.3115-.849-.8029-.9362-1.3106.0266.0099-.2107-1.5946-.2107-4.6985 0-2.3561.1279-3.6186.1863-4.0172.0627-.4199.2745-.7636.8394-.7377.565.0267 1.333.0132 3.1393.3285 2.154.3848 3.2094.7098 3.7217.8795.4633.1598.9511.5088 1.0454 1.1627 0 0 .2495 1.7183.2457 4.3236.0037 2.1086-.1541 4.1978-.2259 4.8732-.067.6256-.3964.9783-1.0511.9497zm9.752-7.246c-.0004-.3726-.1581-.7198-.4617-.9947l-5.5802-5.1642c-.6403-.6336-1.4022-1.0285-2.3291-1.2129 0 0-2.1053-.4903-5.2392-.9861-3.134-.4958-3.9524-.4398-3.9524-.4398-2.7786 0-2.8787 2.7961-2.9074 3.0784-.0686.6749-.2319 2.4634-.2319 4.9531 0 2.9383.1325 4.9743.2924 6.2188.243 1.8994 1.7888 2.79 2.5002 3.1274.1804.0852 2.111.8565 4.0686 1.4262 1.3194.3846 3.4335.947 4.4239 1.0947.3255.0493 2.2386.3594 3.1424-.7713l5.9298-7.2559c.2458-.336.3446-.4728.3446-.9872zm12.9602-10.5839c-.8411-.0805-1.6871-.0978-2.531-.0519l-13.3365 1.1783s-.8841.1271-1.3877.7613c-.3896.4906-.4715.8999-.4715.8999.1764.1655.2477.2334.345.3174l5.2664 5.0698c.5889.5457.9306 1.0766.9306 1.8712v2.8557c0 .5077-.0464.9343-.3454 1.3173l-2.8244 3.6213 2.8417 1.0404c1.0784.3354 2.0799.3258 3.2056.1641l12.2329-2.6506s2.206-.5539 2.2063-2.5316v-7.0353c0-.1358-.0834-.2526-.2335-.224l-7.8113 1.4492c-.2915.0559-.4741.2915-.4741.5557v3.4081c0 .2036.2509.3677.4741.3205l2.4476-.5393c.1273-.0332.2256.0551.2306.2188v1.0994c-.0117.2263-.2.3824-.4652.4398l-2.7704.5609c.0023-.0081-1.8593.4474-1.8593-1.43v-4.3468c0-1.8967 1.4572-2.0889 1.4572-2.0889l8.6007-1.5649c.224-.0399.4036-.2274.4036-.4304v-1.7706c-.0081-1.955-2.0079-2.076-2.0079-2.076zm-15.9851-18.4423c3.1988.1284 5.6236 2.9954 5.4573 6.4821-.1846 3.4767-2.9569 6.2498-6.0387 6.13-3.1981-.1285-5.5162-3.0236-5.3506-6.5097.1846-3.4766 2.8503-6.2222 5.932-6.1024zm12.886 8.1553c.1311-2.3772 1.9283-4.256 4.0498-4.1798 2.0169.0855 3.6275 2.1039 3.5195 4.4037-.1301 2.384-1.9553 4.1914-4.0722 4.1277-2.0223-.0987-3.6041-2.0442-3.4971-4.3516zm10.7239.3107c-.0056-4.6922-3.7046-8.4653-8.2575-8.4653-2.6576 0-5.0689 1.3276-6.6293 3.2982-1.1988-5.0087-5.6287-8.6991-10.9324-8.6852-6.3298.0167-11.4188 5.1786-11.3977 11.5436.0212 6.4296 5.1375 11.6536 11.3977 11.6356.3605-.0039 17.611-1.0976 17.5617-1.0985 4.9718-.4051 8.2829-3.6453 8.2575-8.2284z"
+                      fill="#ff7705" fill-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Icon -->
+              <div class="social_icon-box">
+                <a href="#">
+                  <svg width="30" height="30" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g transform="matrix(.363638 0 0 .363636 -3.272763 -2.909091)">
+                      <path d="M130 29v132c0 14.77 10.2 23 21 23 10 0 21-7 21-23V30c0-13.54-10-22-21-22s-21 9.33-21 21z"
+                        fill="#f9ab00" />
+                      <g fill="#e37400">
+                        <path
+                          d="M75 96v65c0 14.77 10.2 23 21 23 10 0 21-7 21-23V97c0-13.54-10-22-21-22s-21 9.33-21 21z" />
+                        <circle cx="41" cy="163" r="21" />
+                      </g>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- End Social One -->
+
+    <!-- News One -->
+    <!-- <section class="news-one">
+      <div class="news-one_shadow" style="background-image:url(assets/images/background/news-shadow-1.png)"></div>
+      <div class="news-one_shadow-two" style="background-image:url(assets/images/background/news-shadow-2.png)"></div>
+      <div class="auto-container">
+      <div class="sec-title title-anim centered">
+        <div class="sec-title_title">our blog</div>
+        <h2 class="sec-title_heading">Read our latest <span>blogs</span></h2>
+      </div>
+      <div class="three-item_carousel swiper-container">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="news-block_one">
+              <div class="news-block_one-inner">
+                <div class="news-block_one-image">
+                  <a href="news-detail.html"><img src="assets/images/resource/news-1.jpg" alt=""></a>
+                </div>
+                <div class="news-block_one-content">
+                  <h5 class="news-block_one-title"><a href="news-detail.html">Transforming industries and shaping the
+                      future</a></h5>
+                  <div class="news-block_one-text">Lorem ipsum dolor sit amet consectetur adipiscing vitae mattis
+                    tellus. Nullam quis mattis ligula consectetur.</div>
+                  <div class="news-block_one-button">
+                    <a href="blog.html" class="template-btn btn-style-two">
+                      <span class="btn-wrap">
+                        <span class="text-one">Read more</span>
+                        <span class="text-two">Read more</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="news-block_one">
+              <div class="news-block_one-inner">
+                <div class="news-block_one-image">
+                  <a href="news-detail.html"><img src="assets/images/resource/news-2.jpg" alt=""></a>
+                </div>
+                <div class="news-block_one-content">
+                  <h5 class="news-block_one-title"><a href="news-detail.html">Exploring the cutting-edge of artificial
+                      intelligence</a></h5>
+                  <div class="news-block_one-text">Lorem ipsum dolor sit amet consectetur adipiscing vitae mattis
+                    tellus. Nullam quis mattis ligula consectetur.</div>
+                  <div class="news-block_one-button">
+                    <a href="blog.html" class="template-btn btn-style-two">
+                      <span class="btn-wrap">
+                        <span class="text-one">Read more</span>
+                        <span class="text-two">Read more</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="news-block_one">
+              <div class="news-block_one-inner">
+                <div class="news-block_one-image">
+                  <a href="news-detail.html"><img src="assets/images/resource/news-3.jpg" alt=""></a>
+                </div>
+                <div class="news-block_one-content">
+                  <h5 class="news-block_one-title"><a href="news-detail.html">Understanding the basics of artificial
+                      intelligence</a></h5>
+                  <div class="news-block_one-text">Lorem ipsum dolor sit amet consectetur adipiscing vitae mattis
+                    tellus. Nullam quis mattis ligula consectetur.</div>
+                  <div class="news-block_one-button">
+                    <a href="blog.html" class="template-btn btn-style-two">
+                      <span class="btn-wrap">
+                        <span class="text-one">Read more</span>
+                        <span class="text-two">Read more</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="three-item_carousel-pagination"></div>
+      </div>
+    </div>
+    </section> -->
+    <!-- End News One -->
+
+    <!-- CTA One -->
+    <section class="cta-three">
+      <div class="auto-container">
+        <div class="inner-container">
+          <div class="row clearfix">
+
+            <!-- Right Box -->
+            <div class="cta-three_image-column col-lg-6 col-md-12 col-sm-12">
+              <div class="cta-three_image-outer">
+                <img src="https://hoopay.com.br/index/assets/img/hero-mockup.png" alt="" style='max-height: 400px;'>
+              </div>
+            </div>
+
+            <!-- Left Box -->
+            <div class="cta-three_title-column col-lg-6 col-md-12 col-sm-12">
+              <div class="cta-three_title-outer">
+                <!-- Sec Title -->
+                <div class="sec-title style-two light">
+                  <!-- <div class="sec-title_title">Our Philosophy</div> -->
+                  <h2 class="sec-title_heading">Um novo Modelo para Aumentar o seu
+                    <span>Faturamento</span>!
+                  </h2>
+                  <div class="sec-title_text">Entre na Plataforma que mais Oferta serviços pensando estrategicamente no
+                    seu melhor Faturamento!
+
+                  </div>
+                </div>
+                <div class="cta-two_button">
+                  <a href="https://apps.apple.com/br/app/hoopay/id6480219382" class="template-btn btn-style-three">
+                    <span class="btn-wrap">
+                      <span class="text-one">Apple Store <i class="fa-brands fa-apple"></i></span>
+                      <span class="text-two">Apple Store <i class="fa-brands fa-apple"></i></span>
+                    </span>
+                  </a>
+
+                  <a href="https://play.google.com/store/apps/details?id=br.com.hpay.app&hl=pt"
+                    class="template-btn btn-style-three">
+                    <span class="btn-wrap">
+                      <span class="text-one">Google Play <i class="fa-brands fa-google-play"></i></span>
+                      <span class="text-two">Google Play <i class="fa-brands fa-google-play"></i></span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End CTA One -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer" id='contact'>
+      <div class="footer_pattern" style="background-image: url(assets/images/background/footer-pattern.png)"></div>
+      <div class="auto-container">
+        <div class="inner-container">
+          <!-- Widgets Section -->
+          <div class="widgets-section">
+            <div class="row clearfix">
+
+              <!-- Big Column -->
+              <div class="big-column col-lg-5 col-md-12 col-sm-12">
+                <div class="footer-newsletter">
+                  <img class="navbar-brand-dark mb-2" src="https://dashboard.hoopay.com.br/shared/assets/logo_white.png"
+                    style="max-width: 100px; width: 100%" alt="brand-logo-dark" />
+
+                  <div class="footer-newsletter_text">Tenha em mãos tudo o que você precisa para aumentar
+                    consideravelmente o seu faturamento. Conte com uma
+                    Equipe especializada para te atender gratuitamente.</div>
+                </div>
+              </div>
+
+              <!-- Big Column -->
+              <div class="big-column col-lg-7 col-md-12 col-sm-12">
+                <div class="footer-lists_outer">
+                  <div class="row clearfix">
+                    <!-- Column -->
+                    <div class="column col-lg-4 col-md-4 col-sm-6">
+                      <h5 class="footer-title">Links Rápidos</h5>
+                      <ul class="footer-pages_list">
+                        <li><a href="#">Taxas</a></li>
+                        <li><a href="#">Integrações</a></li>
+                        <li><a href="#">Suporte</a></li>
+                        <li><a href="#">Contato</a></li>
+                      </ul>
+                    </div>
+                    <!-- Column -->
+                    <div class="column col-lg-4 col-md-4 col-sm-6">
+                      <h5 class="footer-title">Suporte</h5>
+                      <ul class="footer-pages_list">
+                        <li><a href="#">Termos de Serviços</a></li>
+                        <li><a href="/politica_privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="https://ajuda.hoopay.com.br/">Central de Ajuda</a></li>
+                        <li><a href="#">Perguntas e Respostas</a></li>
+                      </ul>
+                    </div>
+                    <!-- Column -->
+                    <div class="column col-lg-4 col-md-4 col-sm-6">
+                      <h5 class="footer-title">Endereço</h5>
+                      <div style="color: var(--color-three);">
+                        ajuda@hoopay.com.br<br>
+                        CNPJ 47.875.120/0001-04<br>
+                        Rua Copaiba Lote 01 Sala 1010 A 1017<br>
+                        Norte (Aguas Claras)<br>
+                        Brasília DF<br>
+                        CEP 71919-540</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="auto-container">
+          <div class="inner-container d-flex justify-content-between align-items-center flex-wrap">
+            <div class="footer-logo"><a href="index.html"><img
+                  src="https://dashboard.hoopay.com.br/shared/assets/15_2.png" alt="" title=""
+                  style="max-width: 150px;"></a></div>
+            <div class="footer-copyright">&copy; 2022 a 2024 - Todos os Direitos Reservados.</div>
+            <!-- Social Box -->
+            <div class="footer-social_box">
+              <a href="https://facebook.com/hoopayoficial"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://twitter.com/hoopayoficial"><i class="fa-brands fa-twitter"></i></a>
+              <a href="https://youtube.com/hoopayoficial"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://instagram.com/hoopayoficial"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://linkedin.com/hoopayoficial"><i class="fa-brands fa-linkedin"></i></a>
             </div>
           </div>
         </div>
       </div>
     </footer>
-    <!-- Footer Section End -->
 
-    <!-- Back to Top -->
-    <a href="#" class="back-to-top back-to-top-pulse"
-      ><i class="fa fa-caret-up"></i
-    ></a>
 
-    <!--Jquery js-->
-    <script src="index/assets/js/jquery-3.5.1.min.js"></script>
-    <script src="index/assets/js/bootstrap.min.js"></script>
-    <script src="index/assets/js/plugins.js"></script>
-    <!-- Gmap3 Min JS -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ_mGhah8EApmFiXYYBsdBuygviP2M2EE"></script>
-    <script src="index/assets/js/map.js"></script>
-    <script src="index/assets/js/gmap3.min.js"></script>
-    <!--Site Main js-->
-    <script src="index/assets/js/main.js"></script>
-  </body>
+  </div>
+  <!-- End PageWrapper -->
+
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+    </svg>
+  </div>
+
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/appear.js"></script>
+  <script src="assets/js/parallax.min.js"></script>
+  <script src="assets/js/tilt.jquery.min.js"></script>
+  <script src="assets/js/jquery.paroller.min.js"></script>
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/swiper.min.js"></script>
+  <script src="assets/js/backtotop.js"></script>
+  <script src="assets/js/odometer.js"></script>
+  <script src="assets/js/parallax-scroll.js"></script>
+
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/SplitText.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
+  <script src="assets/js/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/ScrollSmoother.min.js"></script>
+
+  <script src="assets/js/touchspin.js"></script>
+  <script src="assets/js/jquery.marquee.min.js"></script>
+  <script src="assets/js/magnific-popup.min.js"></script>
+  <script src="assets/js/nav-tool.js"></script>
+  <script src="assets/js/jquery-ui.js"></script>
+  <script src="assets/js/element-in-view.js"></script>
+  <script src="assets/js/script.js"></script>
+
+  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+</body>
+
 </html>
