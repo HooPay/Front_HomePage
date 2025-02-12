@@ -8,6 +8,8 @@ import { FaqSection } from "../components/faq-section"
 import { AchievementShowcase } from "../components/achievement-showcase"
 import { ToolsShowcase } from "../components/tools-showcase"
 import "../index.css"
+import { MembersAreaSection } from "../components/members-area-section"
+import { AchievementPlaques } from "../components/achievement-plaques"
 
 export default function Home() {
   useEffect(() => {
@@ -21,7 +23,13 @@ export default function Home() {
         <FeaturesSection />
       </div>
       <ToolsShowcase />
-      <AchievementShowcase />
+      <div id="achievement-plaques">
+        <AchievementPlaques />
+      </div>
+      {/* <AchievementShowcase /> */}
+      <div id="members-area">
+        <MembersAreaSection />
+      </div>
       <div id="pricing">
         <PricingSection />
       </div>
