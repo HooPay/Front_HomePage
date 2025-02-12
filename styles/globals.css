@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --main-color: rgb(136, 114, 250);
+  --secondary-color: rgb(208, 147, 232);
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl transition-all duration-300 hover:bg-white/10;
+}
+
+.glass-effect {
+  @apply bg-black/20 backdrop-blur-xl border border-white/10;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, rgb(136, 114, 250, 0.2), rgb(208, 147, 232, 0.2));
+}
+
+.store-button {
+  @apply flex items-center justify-center px-6 py-3 rounded-full border border-white/20 
+         bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300
+         text-white font-medium;
+}
+
+.achievement-plaque {
+  @apply transition-all duration-300 hover:shadow-2xl hover:scale-105;
+}
+
+.achievement-text {
+  @apply transition-all duration-300 hover:text-[var(--main-color)];
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.tools-showcase {
+  @apply relative h-[600px] w-full overflow-hidden;
+  perspective: 1000px;
+}
+
+.tools-carousel {
+  @apply absolute w-full h-full;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.tool-item {
+  @apply absolute w-[400px] h-[400px] left-1/2 top-1/2;
+  transform-style: preserve-3d;
+  transition: transform 1s, opacity 1s;
+}
+
+.tool-content {
+  @apply w-full h-full rounded-2xl overflow-hidden shadow-2xl;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.tool-image {
+  @apply w-full h-full object-cover;
+  transition: transform 0.5s;
+}
+
+.tool-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-8;
+  transition: opacity 0.5s, transform 0.5s;
+  transform: translateY(20px);
+}
+
+.tool-content:hover .tool-overlay {
+  @apply opacity-100;
+  transform: translateY(0);
+}
+
+.tool-title {
+  @apply text-3xl font-bold text-white mb-4;
+  transition: transform 0.5s;
+  transform: translateY(20px);
+}
+
+.tool-content:hover .tool-title {
+  transform: translateY(0);
+}
+
+.tool-description {
+  @apply text-white/80;
+  transition: transform 0.5s;
+  transform: translateY(20px);
+}
+
+.tool-content:hover .tool-description {
+  transform: translateY(0);
+}
+
+.parallax-bg {
+  @apply absolute inset-0 bg-cover bg-center;
+  background-image: url("/placeholder.svg?height=1080&width=1920");
+  transform: translateZ(-50px) scale(1.5);
+}
+
+.slider-controls {
+  @apply absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4 z-10;
+}
+
+.slider-button {
+  @apply bg-white/10 hover:bg-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
