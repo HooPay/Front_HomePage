@@ -63,7 +63,7 @@ export function FeaturesSection() {
   return (
     <div className="relative overflow-hidden bg-gray-900 py-32">
       {/* Background Effects */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-gray-950" />
         <motion.div 
           initial={{ opacity: 0 }}
@@ -75,7 +75,7 @@ export function FeaturesSection() {
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-400/20 via-transparent to-transparent" />
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ0cmFuc3BhcmVudCIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMSIgZmlsbD0icmdiYSgxMjksIDE0MCwgMjQ4LCAwLjEpIi8+PC9zdmc+')] opacity-20" />
         </motion.div>
-      </div>
+      </div> */}
 
       <div ref={containerRef} className="container relative mx-auto px-4">
         <motion.div style={{ y, opacity }} className="relative z-10">
@@ -128,7 +128,7 @@ export function FeaturesSection() {
                 {/* <div className="absolute -inset-[1px] bg-gradient-to-b from-violet-500/30 to-transparent rounded-3xl blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500" /> */}
                 
                 {/* Card Content */}
-                <div className="relative h-full p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-500 group-hover:border-violet-500/30 group-hover:bg-white/10">
+                <div className="relative h-full p-8 rounded-2xl bg-white/5 border border-white/10 transition-all duration-500 group-hover:border-violet-500/30 group-hover:bg-white/10">
                   {/* Icon */}
                   <div className="mb-6">
                     <div className="w-14 h-14 rounded-2xl bg-indigo-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">

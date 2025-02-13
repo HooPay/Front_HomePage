@@ -4,37 +4,43 @@ import { useRef } from 'react'
 
 const achievements = [
   {
-    level: '1K',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tubar%C3%A3o-placa-I14F088AaeSy5bOEDIVyl0YQXYMnEu.png',
-    mascot: 'Shark',
-    description: 'Primeiro marco alcançado',
+    level: "1K",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tubar%C3%A3o-placa-I14F088AaeSy5bOEDIVyl0YQXYMnEu.png",
+    mascot: "Shark",
+    title: "Primeiro Marco",
+    description:
+      "Alcançamos nosso primeiro milhar, provando que nossa visão tem potencial real no mercado.",
     unlocked: true,
-    color: 'from-emerald-500/30 to-teal-500/30'
+    color: "from-emerald-500 to-teal-500",
   },
   {
-    level: '50K',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coruja-placa-spVisS85t2VsLhiuMwFjnPTZ1qSwh4.png',
-    mascot: 'Owl',
-    description: 'Crescimento consistente',
+    level: "50K",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coruja-placa-spVisS85t2VsLhiuMwFjnPTZ1qSwh4.png",
+    mascot: "Owl",
+    title: "Crescimento Consistente",
+    description: "Nossa base de clientes cresceu exponencialmente, validando nossa estratégia e qualidade de serviço.",
     unlocked: true,
-    color: 'from-violet-500/30 to-purple-500/30'
+    color: "from-violet-500 to-purple-500",
   },
   {
-    level: '100K',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/urso-placa-kJG4PaCN85KGTbflZACTKNQ8ixgR25.png',
-    mascot: 'Bear',
-    description: 'Domínio do mercado',
+    level: "100K",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/urso-placa-kJG4PaCN85KGTbflZACTKNQ8ixgR25.png",
+    mascot: "Bear",
+    title: "Domínio do Mercado",
+    description: "Atingimos uma posição de liderança, sendo reconhecidos como referência em nossa indústria.",
     unlocked: true,
-    color: 'from-blue-500/30 to-indigo-500/30'
+    color: "from-blue-500 to-indigo-500",
   },
   {
-    level: '250K',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lobo-placa-plrjzVKgIBahzCFb79QH04yjXJN5LO.png',
-    mascot: 'Wolf',
-    description: 'Liderança absoluta',
+    level: "250K",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lobo-placa-plrjzVKgIBahzCFb79QH04yjXJN5LO.png",
+    mascot: "Wolf",
+    title: "Liderança Absoluta",
+    description: "Consolidamos nossa posição como líderes incontestáveis, redefinindo os padrões do setor.",
     unlocked: true,
-    color: 'from-rose-500/30 to-pink-500/30'
-  }
+    color: "from-rose-500 to-pink-500",
+  },
 ]
 
 export function AchievementPlaques() {
@@ -154,12 +160,11 @@ export function AchievementPlaques() {
 
                     {/* Achievement Info */}
                     <div className="text-center">
-                      <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-violet-400 transition-colors duration-300">
-                        {achievement.mascot}
+                      <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-violet-400 transition-colors duration-300">
+                        {achievement.title}
                       </h3>
-                      <p className="text-gray-400 text-sm">
-                        {achievement.description}
-                      </p>
+                      <p className="text-gray-300 text-sm mb-4">{achievement.mascot}</p>
+                      <p className="text-gray-400 text-sm">{achievement.description}</p>
                     </div>
 
                     {/* Connection Line */}
