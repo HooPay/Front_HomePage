@@ -52,7 +52,7 @@ export function HeroSection() {
                 Faça parte da revolução dos pagamentos digitais
               </h1>
               <p className="text-xl text-white/80 font-medium">
-                TAXA ZERO PARA PAGAMENTOS VIA PIX
+                TAXA BAIXA PARA PAGAMENTOS VIA PIX
               </p>
               <p className="text-lg text-white/60">
                 Simplifique suas operações financeiras e economize com nossas ferramentas gratuitas e intuitivas.
