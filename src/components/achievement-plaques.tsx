@@ -12,7 +12,7 @@ const achievements = [
     description:
       "Alcançamos nosso primeiro milhar, provando que nossa visão tem potencial real no mercado.",
     unlocked: true,
-    color: "from-emerald-500 to-teal-500",
+    color: "bg-emerald-500",
   },
   {
     level: "50K",
@@ -21,7 +21,7 @@ const achievements = [
     title: "Crescimento Consistente",
     description: "Nossa base de clientes cresceu exponencialmente, validando nossa estratégia e qualidade de serviço.",
     unlocked: true,
-    color: "from-violet-500 to-purple-500",
+    color: "bg-violet-500",
   },
   {
     level: "100K",
@@ -30,7 +30,7 @@ const achievements = [
     title: "Domínio do Mercado",
     description: "Atingimos uma posição de liderança, sendo reconhecidos como referência em nossa indústria.",
     unlocked: true,
-    color: "from-blue-500 to-indigo-500",
+    color: "bg-indigo-500",
   },
   {
     level: "250K",
@@ -39,7 +39,7 @@ const achievements = [
     title: "Liderança Absoluta",
     description: "Consolidamos nossa posição como líderes incontestáveis, redefinindo os padrões do setor.",
     unlocked: true,
-    color: "from-rose-500 to-pink-500",
+    color: "bg-rose-500",
   },
 ]
 
@@ -56,7 +56,11 @@ export function AchievementPlaques() {
   return (
     <section ref={containerRef} className="relative overflow-hidden bg-gray-900 py-32">
       {/* Background Effects */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-black">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black" />
+      </div>
+
+      {/* <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-gray-950" />
         <motion.div 
           initial={{ opacity: 0 }}
@@ -68,7 +72,7 @@ export function AchievementPlaques() {
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-400/20 via-transparent to-transparent" />
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ0cmFuc3BhcmVudCIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMSIgZmlsbD0icmdiYSgxMjksIDE0MCwgMjQ4LCAwLjEpIi8+PC9zdmc+')] opacity-20" />
         </motion.div>
-      </div>
+      </div> */}
 
       <div className="container relative mx-auto px-4">
         <motion.div style={{ y, opacity }} className="relative z-10">
@@ -137,7 +141,7 @@ export function AchievementPlaques() {
                   <div className="relative h-full rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-500 group-hover:border-violet-500/30 group-hover:bg-white/10 p-6">
                     {/* Level Badge */}
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                      <div className={`px-4 py-1 rounded-full bg-gradient-to-r ${achievement.color} text-white text-sm font-semibold shadow-lg`}>
+                      <div className={`px-4 py-1 rounded-full ${achievement.color} text-white text-sm font-semibold shadow-lg`}>
                         Nível {achievement.level}
                       </div>
                     </div>
