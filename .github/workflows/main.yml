@@ -1,0 +1,34 @@
+name: Deploy React App
+
+on:
+  push:
+    braches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14' # ou a versão que você está usando
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.DEPLOY_FTP_SERVER }}
+          username: ${{ secrets.DEPLOY_FTP_USERNAME }}
+          password: ${{ secrets.DEPLOY_FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: /home/
