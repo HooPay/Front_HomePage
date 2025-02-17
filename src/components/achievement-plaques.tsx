@@ -54,7 +54,7 @@ export function AchievementPlaques() {
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 0.8])
 
   return (
-    <section ref={containerRef} className="relative overflow-hidden bg-gray-900 py-32">
+    <section ref={containerRef} className="relative overflow-hidden py-32">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-black">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black" />
@@ -155,11 +155,11 @@ export function AchievementPlaques() {
                       <img
                         src={achievement.image}
                         alt={`${achievement.mascot} Achievement Plaque`}
-                        className="w-full h-auto rounded-lg shadow-2xl"
+                        className="w-full h-auto rounded-lg"
                       />
                       
                       {/* Hover Glow Effect */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-violet-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
+                      {/* <div className="absolute inset-0 bg-gradient-to-t from-violet-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" /> */}
                     </motion.div>
 
                     {/* Achievement Info */}
@@ -172,9 +172,9 @@ export function AchievementPlaques() {
                     </div>
 
                     {/* Connection Line */}
-                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-1 h-12">
+                    {/* <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-1 h-12">
                       <div className="h-full w-full bg-gradient-to-b from-violet-500/50 to-transparent" />
-                    </div>
+                    </div> */}
                   </div>
                 </motion.div>
               ))}

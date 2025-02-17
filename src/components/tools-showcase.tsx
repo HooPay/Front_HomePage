@@ -1,8 +1,6 @@
-"use client"
-
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-import type React from "react" // Import React
+import { ArrowRight, ChevronRight } from "lucide-react"
+import type React from "react"
 
 const features = [
   {
@@ -11,21 +9,36 @@ const features = [
     description:
       "Gerenciamento de logística das vendas de produtos físicos, acompanhamento e geração de código de rastreio.",
     image: "https://cdn.hoopay.com.br/images/tools/hoopay_logistica.png",
-    gradient: "group-hover:opacity-100 bg-gradient-to-r from-purple-500/20 via-violet-500/20 to-fuchsia-500/20",
+    benefits: [
+      "Rastreamento em tempo real",
+      "Integração com transportadoras",
+      "Gestão de estoque automatizada"
+    ],
+    gradient: "from-purple-500/20 via-violet-500/20 to-fuchsia-500/20",
   },
   {
     id: 2,
     title: "Marketing",
     description: "Fluxo de envio de email, SMS e WhatsApp definindo data e hora de recebimento.",
     image: "https://cdn.hoopay.com.br/images/tools/hoopay_marketing.png",
-    gradient: "group-hover:opacity-100 bg-gradient-to-r from-purple-500/20 via-violet-500/20 to-fuchsia-500/20",
+    benefits: [
+      "Automação de campanhas",
+      "Segmentação avançada",
+      "Análise de performance"
+    ],
+    gradient: "from-purple-500/20 via-violet-500/20 to-fuchsia-500/20",
   },
   {
     id: 3,
     title: "Nota Fiscal",
     description: "Emissão, cancelamento, etc. de nota fiscal de venda de produto físico e digital.",
     image: "https://cdn.hoopay.com.br/images/tools/hoopay_notafiscal.png",
-    gradient: "group-hover:opacity-100 bg-gradient-to-r from-violet-500/20 via-purple-500/20 to-fuchsia-500/20",
+    benefits: [
+      "Emissão automática",
+      "Conformidade fiscal",
+      "Histórico completo"
+    ],
+    gradient: "from-violet-500/20 via-purple-500/20 to-fuchsia-500/20",
   },
   {
     id: 4,
@@ -33,11 +46,16 @@ const features = [
     description:
       "Ferramenta completa para vendedores converterem vendas não finalizadas, com fluxo automático de distribuição de contatos.",
     image: "https://cdn.hoopay.com.br/images/tools/hoopay_conversao.jpg",
-    gradient: "group-hover:opacity-100 bg-gradient-to-r from-fuchsia-500/20 via-purple-500/20 to-violet-500/20",
+    benefits: [
+      "Recuperação de carrinho",
+      "Distribuição inteligente",
+      "Métricas em tempo real"
+    ],
+    gradient: "from-fuchsia-500/20 via-purple-500/20 to-violet-500/20",
   },
 ]
 
-function FeatureCard({ feature }: { feature: (typeof features)[0] }) {
+function FeatureSection({ feature, index }: { feature: (typeof features)[0]; index: number }) {
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
@@ -51,52 +69,92 @@ function FeatureCard({ feature }: { feature: (typeof features)[0] }) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-100px" }}
       onMouseMove={handleMouseMove}
-      className="group relative flex flex-col justify-between h-full rounded-3xl border border-white/10 bg-black/40 p-8 overflow-hidden"
+      className="group relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center py-16 first:pt-0 last:pb-0"
     >
-      {/* Gradient overlay */}
-      <div className={`absolute inset-0 opacity-0 transition-opacity duration-500 ${feature.gradient}`} />
-
-      {/* Spotlight effect */}
-      <motion.div
-        className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition duration-500"
-        style={{
-          background: useMotionTemplate`
-            radial-gradient(
-              350px circle at ${mouseX}px ${mouseY}px,
-              rgba(255,255,255,0.1),
-              transparent 80%
-            )
-          `,
-        }}
-      />
-
-      <div className="relative space-y-6">
-        <div className="flex justify-between items-start">
-          <div className="w-full aspect-[4/2.5] relative rounded-2xl overflow-hidden bg-black/50">
-            <img
-              src={feature.image || "/placeholder.svg"}
-              alt={feature.title}
-              className="w-full h-full object-cover object-center opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-violet-400">
-            {feature.title}
-          </h3>
-          <p className="mt-2 text-sm text-gray-400 leading-relaxed">{feature.description}</p>
+      {/* Vertical line */}
+      <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-purple-500/20 via-purple-500/5 to-transparent">
+        <div className="sticky top-1/2">
+          {/* <div className="absolute -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-purple-500 ring-4 ring-purple-500/20" /> */}
         </div>
       </div>
 
-      {/* <button className="relative mt-8 inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors group/button">
-        Saiba mais
-        <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-300 group-hover/button:translate-x-1" />
-      </button> */}
+      {/* Content Side */}
+      <div className="lg:pr-8 pl-8">
+        <div className="space-y-6">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+            className="inline-flex items-center rounded-full px-4 py-1 bg-purple-500/10 border border-purple-500/20"
+          >
+            <span className="text-sm font-medium bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">
+              Ferramenta {index + 1}
+            </span>
+          </motion.div>
+
+          <div className="space-y-4">
+            <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
+              {feature.title}
+            </h3>
+            <p className="text-lg text-gray-400 leading-relaxed">{feature.description}</p>
+          </div>
+
+          <div className="space-y-4">
+            {feature.benefits.map((benefit, i) => (
+              <div key={i} className="flex items-center gap-3 text-gray-300">
+                <div className="w-5 h-5 rounded-full bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+                  <ChevronRight className="w-4 h-4 text-purple-400" />
+                </div>
+                <span>{benefit}</span>
+              </div>
+            ))}
+          </div>
+
+          <a href="https://dashboard.hoopay.com.br/login.html" className="inline-flex items-center px-6 py-2.5 rounded-full bg-gradient-to-r from-purple-500 to-violet-500 text-white font-medium group/button hover:shadow-lg hover:shadow-purple-500/20 transition-shadow">
+            Saiba mais
+            <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover/button:translate-x-1" />
+          </a>
+        </div>
+      </div>
+
+      {/* Image Side */}
+      <div className="relative">
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-purple-500/10 to-violet-500/10 p-1"
+        >
+          <div className="relative rounded-xl overflow-hidden bg-black/40 backdrop-blur-sm">
+            <img
+              src={feature.image}
+              alt={feature.title}
+              className="w-full aspect-[16/10] object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-black/20 to-transparent" />
+            
+            {/* Spotlight effect */}
+            <motion.div
+              className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition duration-500"
+              style={{
+                background: useMotionTemplate`
+                  radial-gradient(
+                    450px circle at ${mouseX}px ${mouseY}px,
+                    rgba(139,92,246,0.15),
+                    transparent 80%
+                  )
+                `,
+              }}
+            />
+          </div>
+        </motion.div>
+
+        {/* Background glow */}
+        <div className={`absolute -inset-4 bg-gradient-to-r ${feature.gradient} rounded-3xl blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-500`} />
+      </div>
     </motion.div>
   )
 }
@@ -107,6 +165,7 @@ export function ToolsShowcase() {
       {/* Background effects */}
       <div className="absolute inset-0 bg-black">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20" />
       </div>
 
       <div className="relative container mx-auto px-4">
@@ -143,14 +202,13 @@ export function ToolsShowcase() {
           </motion.p>
         </div>
 
-        {/* Features grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature) => (
-            <FeatureCard key={feature.id} feature={feature} />
+        {/* Features list */}
+        <div className="relative pl-8">
+          {features.map((feature, index) => (
+            <FeatureSection key={feature.id} feature={feature} index={index} />
           ))}
         </div>
       </div>
     </section>
   )
 }
-

@@ -88,7 +88,7 @@ export function FloatingCards() {
           delay: 0.5,
         }}
       >
-        <div className="rounded-3xl shadow-2xl p-1 w-[300px] h-[500px] relative overflow-hidden">
+        <div className="rounded-3xl p-1 w-[300px] h-[500px] relative overflow-hidden">
           <img
             src="https://hoopay.com.br/index/assets/img/hero-mockup.png"
             alt="HooPay App"
@@ -182,8 +182,8 @@ export function FloatingCards() {
           ease: "easeInOut",
         }}
       >
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-300 rounded-full filter blur-xl opacity-30"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-purple-300 rounded-full filter blur-xl opacity-30"></div>
+        {/* <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-300 rounded-full filter blur-xl opacity-30"></div> */}
+        {/* <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-purple-300 rounded-full filter blur-xl opacity-30"></div> */}
       </motion.div>
     </div>
   )
