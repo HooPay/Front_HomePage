@@ -4,19 +4,8 @@ import { useRef } from 'react'
 
 const achievements = [
   {
-    level: "1K",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tubar%C3%A3o-placa-I14F088AaeSy5bOEDIVyl0YQXYMnEu.png",
-    mascot: "Shark",
-    title: "Primeiro Marco",
-    description:
-      "Alcançamos nosso primeiro milhar, provando que nossa visão tem potencial real no mercado.",
-    unlocked: true,
-    color: "bg-emerald-500",
-  },
-  {
     level: "50K",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coruja-placa-spVisS85t2VsLhiuMwFjnPTZ1qSwh4.png",
+    image: "https://cdn.hoopay.com.br/images/achievements/coruja-placa.png",
     mascot: "Owl",
     title: "Crescimento Consistente",
     description: "Nossa base de clientes cresceu exponencialmente, validando nossa estratégia e qualidade de serviço.",
@@ -25,7 +14,7 @@ const achievements = [
   },
   {
     level: "100K",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/urso-placa-kJG4PaCN85KGTbflZACTKNQ8ixgR25.png",
+    image: "https://cdn.hoopay.com.br/images/achievements/urso-placa.png",
     mascot: "Bear",
     title: "Domínio do Mercado",
     description: "Atingimos uma posição de liderança, sendo reconhecidos como referência em nossa indústria.",
@@ -34,12 +23,23 @@ const achievements = [
   },
   {
     level: "250K",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lobo-placa-plrjzVKgIBahzCFb79QH04yjXJN5LO.png",
+    image: "https://cdn.hoopay.com.br/images/achievements/lobo-placa.png",
     mascot: "Wolf",
     title: "Liderança Absoluta",
     description: "Consolidamos nossa posição como líderes incontestáveis, redefinindo os padrões do setor.",
     unlocked: true,
     color: "bg-rose-500",
+  },
+  {
+    level: "1KK",
+    image:
+      "https://cdn.hoopay.com.br/images/achievements/tubarao-placa.png",
+    mascot: "Shark",
+    title: "Topo",
+    description:
+      "Poder e agilidade, navegando com precisão e conquistando o topo do mercado.",
+    unlocked: true,
+    color: "bg-emerald-500",
   },
 ]
 
@@ -54,7 +54,7 @@ export function AchievementPlaques() {
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 0.8])
 
   return (
-    <section ref={containerRef} className="relative overflow-hidden py-32">
+    <section ref={containerRef} className="relative overflow-hidden py-32 border-t border-white/10">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-black">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black" />
@@ -140,11 +140,11 @@ export function AchievementPlaques() {
                   {/* Card Content */}
                   <div className="relative h-full rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-500 group-hover:border-violet-500/30 group-hover:bg-white/10 p-6">
                     {/* Level Badge */}
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    {/* <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                       <div className={`px-4 py-1 rounded-full ${achievement.color} text-white text-sm font-semibold shadow-lg`}>
                         Nível {achievement.level}
                       </div>
-                    </div>
+                    </div> */}
 
                     {/* Plaque Image */}
                     <motion.div
