@@ -53,6 +53,20 @@ const features = [
     ],
     gradient: "from-fuchsia-500/20 via-purple-500/20 to-violet-500/20",
   },
+  {
+    id: 5,
+    title: "Bot Express",
+    description:
+      "O Bot Express automatiza a gestão de vendas e assinaturas de grupos no Telegram, garantindo controle total sobre a entrada e saída de membros com base nos pagamentos.",
+    image: "https://cdn.hoopay.com.br/images/tools/bot_express.jpeg",
+    benefits: [
+      "Geração de pix",
+      "Cadastro de planos",
+      "Mensagens personalizáveis"
+    ],
+    icon: 'https://botexpress.hoopay.com.br/img/bot_express_white.d136aebb.png',
+    gradient: "from-fuchsia-500/20 via-purple-500/20 to-violet-500/20",
+  },
 ]
 
 function FeatureSection({ feature, index }: { feature: (typeof features)[0]; index: number }) {
@@ -97,9 +111,16 @@ function FeatureSection({ feature, index }: { feature: (typeof features)[0]; ind
           </motion.div>
 
           <div className="space-y-4">
-            <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
-              {feature.title}
-            </h3>
+            <div>
+              
+              {feature.icon ? (
+                <img src={feature.icon} alt={feature.title} className="max-w-[200px] h-auto" />
+              ) : (
+                <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
+                  {feature.title}
+                </h3>
+              )}
+            </div>
             <p className="text-lg text-gray-400 leading-relaxed">{feature.description}</p>
           </div>
 
@@ -132,7 +153,7 @@ function FeatureSection({ feature, index }: { feature: (typeof features)[0]; ind
             <img
               src={feature.image}
               alt={feature.title}
-              className="w-full aspect-[16/10] object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+              className="w-full aspect-[16/10] object-contain object-start opacity-90 group-hover:opacity-100 transition-opacity duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-black/20 to-transparent" />
             

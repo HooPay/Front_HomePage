@@ -36,7 +36,7 @@ const pricingData = [
     price: "R$ 3,50",
     description: "Recebimento em 2 dias úteis",
     note: "*negociável",
-    features: ["Código de barras", "Compensação automática", "Registro gratuito"],
+    features: ["Boleto com pix", "Compensação automática", "Registro gratuito"],
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
       <path d="M6.7737 19.7C7.5937 18.82 8.8437 18.89 9.5637 19.85L10.5737 21.2C11.3837 22.27 12.6937 22.27 13.5037 21.2L14.5137 19.85C15.2337 18.89 16.4837 18.82 17.3037 19.7C19.0837 21.6 20.5337 20.97 20.5337 18.31V7.04C20.5437 3.01 19.6037 2 15.8237 2H8.2637C4.4837 2 3.5437 3.01 3.5437 7.04V18.3C3.5437 20.97 5.0037 21.59 6.7737 19.7Z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M8.13977 11H8.14875" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -110,7 +110,7 @@ export function PricingSection() {
 
                 <CardHeader className="relative z-10">
                   <CardTitle className="text-2xl font-bold text-white flex items-center gap-2">
-                    <span dangerouslySetInnerHTML={{ __html: plan.icon }}></span>
+                    {/* <span dangerouslySetInnerHTML={{ __html: plan.icon }}></span> */}
                     {plan.title}
                   </CardTitle>
                 </CardHeader>

@@ -10,6 +10,7 @@ import { ToolsShowcase } from "../components/tools-showcase"
 import "../index.css"
 import { MembersAreaSection } from "../components/members-area-section"
 import { AchievementPlaques } from "../components/achievement-plaques"
+import ScrollingNotifications from "../components/scrolling-notification"
 
 export default function Home() {
   useEffect(() => {
@@ -31,6 +32,8 @@ export default function Home() {
         <MembersAreaSection />
       </div>
       <div id="pricing">
+        {/* <ScrollingNotifications />
+        <ScrollingNotifications /> */}
         <PricingSection />
       </div>
       <div id="integrations">
