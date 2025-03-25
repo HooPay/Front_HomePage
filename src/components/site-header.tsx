@@ -67,7 +67,7 @@ export function SiteHeader() {
               >
                 <a 
                   href="https://dashboard.hoopay.com.br/login.html"
-                  className="flex items-center space-x-2"
+                  className="flex items-center"
                 >
                   <span>Login</span>
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[rgb(136,114,250)]/50 transition-all duration-300 group-hover:w-full" />
@@ -84,7 +84,7 @@ export function SiteHeader() {
                 className="relative overflow-hidden bg-[rgb(136,114,250)] hover:bg-[rgb(136,114,250)]/90 text-white rounded-full px-6 group"
               >
                 <a 
-                  href="https://dashboard.hoopay.com.br/login.html"
+                  href="https://dashboard.hoopay.com.br/login.html?register=true"
                   className="relative z-10 flex items-center space-x-2"
                 >
                   <span>Criar conta agora</span>
